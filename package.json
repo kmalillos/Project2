@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/paigeherbst/Project2/issues"
   },
-  "homepage": "https://github.com/paigeherbst/Project2#readme"
+  "homepage": "https://github.com/paigeherbst/Project2#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "sequelize": "^4.42.0"
+  }
 }
