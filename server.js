@@ -2,6 +2,8 @@
 // =============================================================================
 var express = require("express");
 
+var path = require("path");
+
 var PORT = process.env.PORT || 8080;
 
 var app = express();
@@ -18,12 +20,12 @@ var exphbs = require("express-handlebars");
 // ROUTING
 // =============================================================================
 // require("./routes/api-routes")(app);
-// require("./routes/html-routes")(app);
+var routes = require("./routes/html-routes");
 
 // // commented out because giving middleware errors -KM
 // var routes = require("./routes/api-routes");
 // var routes = require("./routes/html-routes");
-// app.use(routes);
+app.use(routes);
 
 // LISTENER
 // =============================================================================
