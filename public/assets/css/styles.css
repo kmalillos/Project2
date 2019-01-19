@@ -1,5 +1,20 @@
 body {
-    background: url("/assets/img/background-snow") no-repeat fixed center;
+    background: url("../img/background-snow.jpg") no-repeat fixed center;
+}
+
+
+.wrapper {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.app-body {
+    height: 75%;
+    width: 75%;
+    background-color: #fff;
+    opacity: 0.9;
+    margin-top: 100px
 }
 
 /* sticky footer */
