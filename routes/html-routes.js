@@ -11,8 +11,19 @@ var router = express.Router();
 // =============================================================
 
 router.get("/", function (req, res) {
-    // res.send("Hello");
     res.render("index");
+});
+
+router.get("/home", function (req, res) {
+    res.render("home");
+});
+
+router.get("/:section", function (req, res) {
+    res.render("section");
+});
+
+router.get("/:section/form", function (req, res) {
+    res.render("form");
 });
 
 // required in server.js

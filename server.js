@@ -19,13 +19,15 @@ var exphbs = require("express-handlebars");
 
 // ROUTING
 // =============================================================================
+// not working
 // require("./routes/api-routes")(app);
-var routes = require("./routes/html-routes");
+// require("./routes/html-routes.js")(app);
 
-// // commented out because giving middleware errors -KM
-// var routes = require("./routes/api-routes");
-// var routes = require("./routes/html-routes");
-app.use(routes);
+// var routesAPI = require("./routes/api-routes");
+// app.use(routesAPI);
+
+var routesHTML = require("./routes/html-routes");
+app.use(routesHTML);
 
 // LISTENER
 // =============================================================================
