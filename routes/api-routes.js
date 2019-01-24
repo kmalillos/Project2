@@ -11,7 +11,8 @@
 // EXPORTED TO SERVER.JS
 module.exports = function(app) {
 
-    app.get("/api/activities", function (req, res) {
+    app.get("/api/:section", function (req, res) {
+        
         // res.json(activities);
     });
 
