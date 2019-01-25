@@ -22,6 +22,14 @@ body {
     margin: 15px;
 }
 
+#home-page {
+    background: #fff;
+    opacity: 0.75;
+    height: 275px;
+    width: 275px;
+    margin: 25px;
+}
+
 /* sticky footer */
 .footer {
     position: fixed;
