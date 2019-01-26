@@ -1,11 +1,11 @@
 module.exports = function(sequelize, DataTypes){
-    var TolietTracker = sequelize.define("Toliet Tracker", {
-        bathroom_type: {
+    var TolietTracker = sequelize.define("TolietTracker", {
+        bathroomType: {
             type: DataTypes.ENUM("pee", "poop"),
             allowNull: false
         
         },
-        bathroom_time: {
+        bathroomTime: {
             type: DataTypes.TIME,
             allowNull: false
         },
@@ -13,6 +13,9 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.STRING,
             allowNull: false
         }
+    }, {
+        freezeTableName: true,
+            timestamps: false 
     });
     return TolietTracker;
 };

@@ -1,15 +1,15 @@
 module.exports = function(sequelize, DataTypes){
-    var VetInfo = sequelize.define("Vet Info", {
+    var VetInfo = sequelize.define("VetInfo", {
         hospital: {
             type: DataTypes.STRING,
             allowNull: false
         
         },
-        vet_name: {
+        vetName: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        phone_number: {
+        phoneNumber: {
             type: DataTypes.STRING,
             allowNull: false
         },
