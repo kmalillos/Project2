@@ -152,7 +152,35 @@ module.exports = function(app) {
         .catch(function(err) {
             console.log(err);
             res.json(err)
-        })
+        });
+        app.get("/api/vaccinations", function(req, res) {
+            db.Vaccinations.findAll({})
+            .then(function(vaccinationsData) {
+                res.json(vaccinationsData);
+            })
+            .catch(function(err) {
+                console.log(err);
+                res.json(err)
+            })
+        });
+    
+        // this route should add a new petInfo to the table
+        app.post("/api/vaccinations", function(req, res) {
+            db.Vaccinations.create({
+                vaccines: req.body.vaccines,
+                vaccineDate: req.body.vaccineDate,
+                expires: req.body.expires
+            })
+            .then(function(vaccinationsCreatedData) {
+                // .dataValues = specifies what data to console.log
+                console.log("New vaccination info created", vaccinationsCreatedData.dataValues);
+                res.json(vaccinationsCreatedData);
+            })
+            .catch(function(err) {
+                console.log(err);
+                res.json(err)
+            })
+        });
         app.get("/api/activitytracker", function(req, res) {
             db.ActivityTracker.findAll({})
             .then(function(activityData) {
@@ -238,34 +266,7 @@ module.exports = function(app) {
                 res.json(err)
             })
         });
-        app.get("/api/vaccinations", function(req, res) {
-            db.Vaccinations.findAll({})
-            .then(function(vaccinationsData) {
-                res.json(vaccinationsData);
-            })
-            .catch(function(err) {
-                console.log(err);
-                res.json(err)
-            })
-        });
-    
-        // this route should add a new petInfo to the table
-        app.post("/api/vaccinations", function(req, res) {
-            db.Vaccinations.create({
-                vaccines: req.body.vaccines,
-                vaccineDate: req.body.vaccineDate,
-                expires: req.body.expires
-            })
-            .then(function(vaccinationsCreatedData) {
-                // .dataValues = specifies what data to console.log
-                console.log("New vaccination info created", vaccinationsCreatedData.dataValues);
-                res.json(vaccinationsCreatedData);
-            })
-            .catch(function(err) {
-                console.log(err);
-                res.json(err)
-            })
-        });
+        
         app.get("/api/diettracker", function(req, res) {
             db.DietTracker.findAll({})
             .then(function(dietData) {

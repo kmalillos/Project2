@@ -60,18 +60,46 @@ module.exports = function (app) {
     });
 
     app.get("/activity", function (req, res) {
+        db.ActivityTracker.findAll({})
+        .then(function(activityTrackerData){
+            res.render("section", {
+                activityTracker: true,
+                data: activityTrackerData
+            });
+        })
         res.render("section");
     });
 
     app.get("/diet", function (req, res) {
+        db.DietTracker.findAll({})
+        .then(function(dietTrackerData){
+            res.render("section", {
+                dietTracker: true,
+                data: dietTrackerData
+            });
+        })
         res.render("section");
     });
 
     app.get("/potty", function (req, res) {
+        db.TolietTracker.findAll({})
+        .then(function(tolietTrackerData){
+            res.render("section", {
+                tolietTracker: true,
+                data: tolietTrackerData
+            });
+        })
         res.render("section");
     });
 
     app.get("/hygiene", function (req, res) {
+        db.TolietTracker.findAll({})
+        .then(function(tolietTrackerData){
+            res.render("section", {
+                tolietTracker: true,
+                data: tolietTrackerData
+            });
+        })
         res.render("section");
     });
 
