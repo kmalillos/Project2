@@ -13,7 +13,27 @@ $("#addPetInfo").on("submit", function(event) {
         url: "/api/petinfo",
         data: newPetInfo
     }).then(function(petInfoData) {
-        console.log("New petInfo added", newPetInfo); //contact = API data?? or NewContact
-        location.href = "/petinfo"; //takes you to homepage 
+        console.log("New petInfo added", newPetInfo); 
+        location.href = "/petinfo"; 
+    })
+});
+
+$("#addActivity").on("submit", function(event) {
+    event.preventDefault();
+
+    var newActivity = {
+        activityType: $("#activityType").val(),
+        startTime:$("#startTime").val().trim(),
+        endTime: $("#endTime").val(),
+        notes: $("#notes").val().trim(),
+    }
+
+    $.ajax({ 
+        method: "POST",
+        url: "/api/activity",
+        data: newActivity
+    }).then(function(activityData) {
+        console.log("New activity added", newActivity); 
+        location.href = "/activity"; 
     })
 });
