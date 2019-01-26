@@ -1,1 +1,42 @@
-<p>This is the Form Page.</p>
+<div class="vertical-center" id="index-page">
+
+  <h1>DoJo:</h1>
+  <h3>Doggy Journal</h3>
+
+
+  <br>
+  <hr><br>
+  
+  <p>This is the Form Page.</p>
+
+{{#if petInfo}}
+    <form id="addContact">
+        <div class="form-group">
+            <!-- Pet Name -->
+            <label for="petName">Pet Name</label>
+            <input type="text" class="form-control" id="petName" name="petName" placeholder="Pet Name">
+        </div>
+
+        <div class="form-group">
+            <!-- Breed -->
+            <label for="breed">Breed</label>
+            <input type="text" class="form-control" id="breed" name="breed" placeholder="Breed">
+        </div>
+
+        <div class="form-group">
+            <!-- Weight -->
+            <label for="weight">Weight (in pounds)</label>
+            <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight">
+        </div>
+
+        <div class="form-group">
+            <!-- Age -->
+            <label for="petName">Age (in years)</label>
+            <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+{{/if}}
+
+</div>

@@ -36,12 +36,15 @@ module.exports = function (app) {
 
     // app.get("/home", isAuthenticated, function (req, res) {
     app.get("/home", function (req, res) {
-        if (req.user) {
-            res.render("home");
-        } else {
-            res.redirect("/")
-        }
 
+        // // authentication here
+        // if (req.user) {
+        //     res.render("home");
+        // } else {
+        //     res.redirect("/")
+        // }
+
+        res.render("home");
 
     });
 
@@ -111,19 +114,23 @@ module.exports = function (app) {
     });
 
     // need to think about the forms...
-    app.get("/:route/add", function (req, res) {
+    // app.get("/:route/add", function (req, res) {
 
-        if (routesList.includes(req.params.route)) {
+    //     if (routesList.includes(req.params.route)) {
 
-            console.log("Yes! Section found!")
+    //         console.log("Yes! Section found!")
 
-            return res.render("add-form");
+    //         return res.render("add-form");
 
-        } else {
-            console.log("No! Section not found.")
-            res.end();
-        }
+    //     } else {
+    //         console.log("No! Section not found.")
+    //         res.end();
+    //     }
 
+    // });
+
+    app.get("/petinfo/add", function (req, res) {
+        return res.render("add-form", {petInfo: true});
     });
 
 };

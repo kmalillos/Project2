@@ -1,33 +1,54 @@
-  <nav class="navbar navbar-default">
+<div class="vertical-center" id="index-page">
+
+  <h1>DoJo:</h1>
+  <h3>Doggy Journal</h3>
+
+
+  <br>
+  <hr><br>
+
+  {{!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
       </div>
     </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
+  </nav> --}}
+
+  {{!-- <div class="container"> --}}
+
+    <h6>SIGN UP</h6>
+    <form class="signup">
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="email-input" placeholder="Email">
       </div>
-    </div>
-  </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="password-input" placeholder="Password">
+      </div>
+
+      <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span> <span class="msg"></span>
+      </div>
+
+      {{!-- <button type="submit" class="btn btn-default">Sign Up</button>
+      <p>Go Back to <a class="btn btn-primary" href="/" role="button">Login</a> --}}
+
+      <a class="btn btn-success" href="/signup" role="button">Sign Up!</a>
+      <br>
+      <p>Or go back to <a href="/">Login</a> page.
+
+
+
+    </form>
+
+      {{!--
+  </div> --}}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/signup.js"></script>
+
+</div>
