@@ -16,9 +16,11 @@ module.exports = function(sequelize, DataTypes){
         notes: {
             type: DataTypes.STRING,
             allowNull: false
-        }, 
-            freezeTableName: true,
-            timestamps: false 
+        }
+            
+    }, {
+        freezeTableName: true,
+        timestamps: false 
     });
     return ActivityTracker;
 };
