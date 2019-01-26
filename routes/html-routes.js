@@ -29,7 +29,6 @@ module.exports = function (app) {
         res.render("index");
     });
 
-
     app.get("/signup", function (req, res) {
         res.render("signup");
     });
@@ -77,7 +76,6 @@ module.exports = function (app) {
                     data: activityTrackerData
                 });
             })
-        res.render("section");
     });
 
     app.get("/diet", function (req, res) {
@@ -131,6 +129,10 @@ module.exports = function (app) {
 
     app.get("/petinfo/add", function (req, res) {
         return res.render("add-form", {petInfo: true});
+    });
+
+    app.get("/activity/add", function (req, res) {
+        return res.render("add-form", {activityTracker: true});
     });
 
 };

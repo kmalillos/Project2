@@ -1,16 +1,15 @@
 <div class="vertical-center" id="index-page">
 
-  <h1>DoJo:</h1>
-  <h3>Doggy Journal</h3>
+    <h1>DoJo:</h1>
+    <h3>Doggy Journal</h3>
 
 
-  <br>
-  <hr><br>
-  
-  <p>This is the Form Page.</p>
-  
+    <br>
+    <hr><br>
 
-{{#if petInfo}}
+    {{!-- SECTION --}}
+
+    {{#if petInfo}}
     <form id="addPetInfo">
         <div class="form-group">
             <!-- Pet Name -->
@@ -37,7 +36,58 @@
         </div>
 
         <input type="submit" value="Submit" class="btn btn-primary">
+
+        <a class="nav-button btn btn-success" href="/home" role="button">
+            Home<span class="glyphicon glyphicon-home"></span>
+        </a>
+
     </form>
-{{/if}}
+    {{/if}}
+
+    {{!-- SECTION --}}
+
+    {{#if activityTracker}}
+        <form id="addActivity">
+            <div class="form-group">
+                <!-- Activity Type -->
+                <label for="activityType">Activity Type</label>
+                <select id="activityType" class="form-control" name="activityType">
+                    <option value="Personal">Walk</option>
+                    <option value="Run">Run</option>
+                    <option value="Dog Park">Dog Park</option>
+                    <option value="Day Care">Day Care</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <!-- Start Time -->
+                <label for="startTime">Start Time</label>
+                <input type="text" class="form-control" id="startTime" name="startTime" placeholder="Start Time">
+            </div>
+
+            <div class="form-group">
+                <!-- End Time -->
+                <label for="endTime">End Time</label>
+                <input type="text" class="form-control" id="endTime" name="endTime" placeholder="End Time">
+            </div>
+
+            <div class="form-group">
+                <!-- Notes -->
+                <label for="petName">Notes</label>
+                <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-primary">
+
+            <a class="nav-button btn btn-success" href="/home" role="button">
+                Home<span class="glyphicon glyphicon-home"></span>
+	        </a>
+
+        </form>
+    {{/if}}
+
+
 
 </div>
