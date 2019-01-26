@@ -4,8 +4,12 @@
 
 {{#if petInfo}}
     <h2>Pet Info</h2> 
+
+    <a class="nav-button btn btn-success float-right" href="/home" role="button">
+		Home<span class="glyphicon glyphicon-home"></span>
+	</a>
 	
-	<a class="nav-button btn btn-primary float-right" href="/petinfo/add" role="button">Add Pet Info</a>
+	<a class="nav-button btn btn-primary float-right" href="/petinfo/add" role="button">Add Pet Info</a> 
 
 	<br><br>
 
@@ -103,9 +107,15 @@
 {{!-- SECTION --}}
 
 {{#if activityTracker}}
-    <h2>Acitivity Tracker</h2>
+    <h2>Activity Tracker</h2>
 
-    <a class="nav-button btn btn-primary" href="/activity/add" role="button">Add Activity Info</a>
+    <a class="nav-button btn btn-success float-right" href="/home" role="button">
+		Home<span class="glyphicon glyphicon-home"></span>
+	</a>
+	
+	<a class="nav-button btn btn-primary float-right" href="/activity/add" role="button">Add Activity</a> 
+
+	<br><br>
 
     <table class="table">
 	<thead class="thead-dark">
