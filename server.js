@@ -32,14 +32,14 @@ var exphbs = require("express-handlebars");
 // ROUTING
 // =============================================================================
 // not working
-require("./routes/api-routes.js")(app);
+// require("./routes/api-routes.js")(app);
 // require("./routes/html-routes.js")(app);
 
 // var routesAPI = require("./routes/api-routes");
 // app.use(routesAPI);
 
-// var routesHTML = require("./html-routes");
-// app.use(routesHTML);
+var routesHTML = require("./routes/html-routes");
+app.use(routesHTML);
 
 // LISTENER
 // =============================================================================

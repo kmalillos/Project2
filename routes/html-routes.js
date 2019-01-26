@@ -4,13 +4,14 @@
 
 // Dependencies
 // =============================================================
+
+// models needs to export db
+var db = require("../models");
+
 var express = require("express");
 var router = express.Router();
 
-// models needs to export db
-// var db = require("../models");
-
-var routesList = ["info","health", "activity", "diet","potty","hygiene"];
+var routesList = ["petinfo","health", "activity", "diet","potty","hygiene"];
 
 // Routes
 // =============================================================
@@ -30,8 +31,15 @@ router.get("/home", function (req, res) {
 //     }
 // });
 
-router.get("/info", function (req, res) {
-    res.render("section");
+router.get("/petinfo", function (req, res) {
+    db.PetInfo.findAll({})
+    .then(function(petinfoData){
+
+        res.render("section", {
+            petInfo: petinfoData
+        });
+    })
+    
 });
 
 router.get("/health", function (req, res) {

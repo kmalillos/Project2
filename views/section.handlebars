@@ -1,16 +1,22 @@
 <h1>{{category}} Page</p>
 
-{{!-- var routesList = ["info","health", "activity", "diet","potty","hygiene"]; --}}
+{{!-- var routesList = ["petinfo","health", "activity", "diet","potty","hygiene"]; --}}
 
-{{#if vetVisits}}
-    <h2>Vet visits</h2>
+{{#if petInfo}}
+    <h2>Pet Info</h2>
     <table>
         <th>
-            <td>Date</td><td>Reason</td><td>Diagnosis</td><td>Follow up plan</td>
+            <td>Pet Name</td>
+            <td>Breed</td>
+            <td>Breed</td>
+            <td>Age</td>
         </th>
-        {{#each vetVisits}}
+        {{#each petinfoData}}
             <tr>
-                <td>{{date}}</td><td>{{reason}}</td><td>{{diagnosis}}</td><td>{{followUp}}</td>
+                <td>{{petName}</td>
+                <td>{{breed}}</td>
+                <td>{{weight}}</td>
+                <td>{{age}}</td>
             </tr>
         {{/each}}
     </table>
