@@ -25,17 +25,24 @@ var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
 
 module.exports = function (app) {
 
-    app.get("/",function (req, res) {
+    app.get("/", function (req, res) {
         res.render("index");
     });
 
-    app.get("/signup",function (req, res) {
+
+    app.get("/signup", function (req, res) {
         res.render("signup");
     });
 
     // app.get("/home", isAuthenticated, function (req, res) {
-        app.get("/home", function (req, res) {
-        res.render("home");
+    app.get("/home", function (req, res) {
+        if (req.user) {
+            res.render("home");
+        } else {
+            res.redirect("/")
+        }
+
+
     });
 
     // // handlebars info example
@@ -47,12 +54,12 @@ module.exports = function (app) {
 
     app.get("/petinfo", function (req, res) {
         db.PetInfo.findAll({})
-        .then(function(petInfoData) {
-            res.render("section", {
-                petInfo: true,
-                data: petInfoData
-            });
-        })
+            .then(function (petInfoData) {
+                res.render("section", {
+                    petInfo: true,
+                    data: petInfoData
+                });
+            })
     });
 
     app.get("/health", function (req, res) {
@@ -61,45 +68,45 @@ module.exports = function (app) {
 
     app.get("/activity", function (req, res) {
         db.ActivityTracker.findAll({})
-        .then(function(activityTrackerData){
-            res.render("section", {
-                activityTracker: true,
-                data: activityTrackerData
-            });
-        })
+            .then(function (activityTrackerData) {
+                res.render("section", {
+                    activityTracker: true,
+                    data: activityTrackerData
+                });
+            })
         res.render("section");
     });
 
     app.get("/diet", function (req, res) {
         db.DietTracker.findAll({})
-        .then(function(dietTrackerData){
-            res.render("section", {
-                dietTracker: true,
-                data: dietTrackerData
-            });
-        })
+            .then(function (dietTrackerData) {
+                res.render("section", {
+                    dietTracker: true,
+                    data: dietTrackerData
+                });
+            })
         res.render("section");
     });
 
     app.get("/potty", function (req, res) {
         db.TolietTracker.findAll({})
-        .then(function(tolietTrackerData){
-            res.render("section", {
-                tolietTracker: true,
-                data: tolietTrackerData
-            });
-        })
+            .then(function (tolietTrackerData) {
+                res.render("section", {
+                    tolietTracker: true,
+                    data: tolietTrackerData
+                });
+            })
         res.render("section");
     });
 
     app.get("/hygiene", function (req, res) {
         db.TolietTracker.findAll({})
-        .then(function(tolietTrackerData){
-            res.render("section", {
-                tolietTracker: true,
-                data: tolietTrackerData
-            });
-        })
+            .then(function (tolietTrackerData) {
+                res.render("section", {
+                    tolietTracker: true,
+                    data: tolietTrackerData
+                });
+            })
         res.render("section");
     });
 
