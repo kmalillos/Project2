@@ -38,18 +38,13 @@ app.use(passport.session());
 var exphbs = require("express-handlebars"); 
     app.engine("handlebars", exphbs({ defaultLayout: "main" }));
     app.set("view engine", "handlebars");
+    
 
 // ROUTING
 // =============================================================================
-// not working
 require("./routes/api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
-// var routesAPI = require("./routes/api-routes");
-// app.use(routesAPI);
-
-// var routesHTML = require("./html-routes");
-// app.use(routesHTML);
 
 // LISTENER
 // =============================================================================

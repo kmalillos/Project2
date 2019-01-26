@@ -4,71 +4,73 @@
 
 // Dependencies
 // =============================================================
-var express = require("express");
-var router = express.Router();
+// // doesn't work
+// var express = require("express");
+// var router = express.Router();
 
 // models needs to export db
-// var db = require("../models");
+var db = require("../models");
 
-var routesList = ["info","health", "activity", "diet","potty","hygiene"];
+var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
 
-// Routes
-// =============================================================
+// // Routes
+// // =============================================================
 
-router.get("/", function (req, res) {
-    res.render("index");
-});
+module.exports = function (app) {
 
-router.get("/home", function (req, res) {
-    res.render("home");
-});
+    app.get("/", function (req, res) {
+        res.render("index");
+    });
 
-// // handlebars info example
-// router.get("/info", function (req, res) {
-//     db.PetInfo.findAll({}).then(queryData) {
-//         res.render("section", {hbsObject: queryData})
-//     }
-// });
+    app.get("/home", function (req, res) {
+        res.render("home");
+    });
 
-router.get("/info", function (req, res) {
-    res.render("section");
-});
+    // // handlebars info example
+    // app.get("/info", function (req, res) {
+    //     db.PetInfo.findAll({}).then(queryData) {
+    //         res.render("section", {hbsObject: queryData})
+    //     }
+    // });
 
-router.get("/health", function (req, res) {
-    res.render("section");
-});
+    app.get("/petinfo", function (req, res) {
+        res.render("section");
+    });
 
-router.get("/activity", function (req, res) {
-    res.render("section");
-});
+    app.get("/health", function (req, res) {
+        res.render("section");
+    });
 
-router.get("/diet", function (req, res) {
-    res.render("section");
-});
+    app.get("/activity", function (req, res) {
+        res.render("section");
+    });
 
-router.get("/potty", function (req, res) {
-    res.render("section");
-});
+    app.get("/diet", function (req, res) {
+        res.render("section");
+    });
 
-router.get("/hygiene", function (req, res) {
-    res.render("section");
-});
+    app.get("/potty", function (req, res) {
+        res.render("section");
+    });
 
-// need to think about the forms...
-router.get("/:route/add", function (req, res) {
+    app.get("/hygiene", function (req, res) {
+        res.render("section");
+    });
 
-    if (routesList.includes(req.params.route)) {
-        
-        console.log("Yes! Section found!")
+    // need to think about the forms...
+    app.get("/:route/add", function (req, res) {
 
-        return res.render("add-form");
+        if (routesList.includes(req.params.route)) {
 
-    } else {
-        console.log("No! Section not found.")
-        res.end();
-    }
+            console.log("Yes! Section found!")
 
-});
+            return res.render("add-form");
 
-// required in server.js
-module.exports = router;
+        } else {
+            console.log("No! Section not found.")
+            res.end();
+        }
+
+    });
+
+};
