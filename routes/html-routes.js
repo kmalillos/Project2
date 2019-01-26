@@ -10,7 +10,7 @@ var router = express.Router();
 // models needs to export db
 // var db = require("../models");
 
-var routesList = ["info","vet","vaccines","diet","potty","hygiene"];
+var routesList = ["info","health", "activity", "diet","potty","hygiene"];
 
 // Routes
 // =============================================================
@@ -34,11 +34,11 @@ router.get("/info", function (req, res) {
     res.render("section");
 });
 
-router.get("/vet", function (req, res) {
+router.get("/health", function (req, res) {
     res.render("section");
 });
 
-router.get("/vaccines", function (req, res) {
+router.get("/activity", function (req, res) {
     res.render("section");
 });
 
