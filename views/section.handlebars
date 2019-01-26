@@ -1,21 +1,20 @@
-
-
-<h1>{{category}} Page</p>
+<div class="vertical-center" id="index-page">
 
 {{!-- var routesList = ["petinfo","health", "activity", "diet","potty","hygiene"]; --}}
 
 {{#if petInfo}}
-    <h2>Pet Info</h2>
+    <h2>Pet Info</h2> 
+	
+	<a class="nav-button btn btn-primary float-right" href="/petinfo/add" role="button">Add Pet Info</a>
 
-    <a class="nav-button btn btn-primary" href="/petinfo/add" role="button">Add Pet Info</a>
+	<br><br>
 
     <table class="table">
 	<thead class="thead-dark">
 		<tr>
 			<th>Pet Name</th>
-			<th>Breed/th>
+			<th>Breed</th>
 			<th>Weight</th>
-			<th>Phone Number</th>
 			<th>Age</th>
 		</tr>
 	</thead>
@@ -195,3 +194,5 @@
 	</tbody>
 </table>
 {{/if}}
+
+</div>
