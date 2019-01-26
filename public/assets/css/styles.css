@@ -1,7 +1,7 @@
 body {
-    background: url("../img/puppy-1.jpg") no-repeat fixed center;
+    background: url("../img/brown-sleepy.jpg") no-repeat fixed center;
+    background-size: cover;
 }
-
 
 .wrapper {
     clear: both;
@@ -9,12 +9,25 @@ body {
     margin-right: auto;
 }
 
-.app-body {
-    height: 75%;
-    width: 75%;
-    background-color: #fff;
-    opacity: 0.9;
-    margin-top: 100px
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+#index-page {
+    width: 33%;
+    margin: 15px;
+}
+
+#home-page {
+    background: #fff;
+    opacity: 0.75;
+    height: 275px;
+    width: 275px;
+    margin: 25px;
 }
 
 /* sticky footer */
