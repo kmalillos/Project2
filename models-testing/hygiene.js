@@ -13,6 +13,9 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.STRING,
             allowNull: false
         }
+    }, {
+        freezeTableName: true,
+            timestamps: false 
     });
     return Hygiene;
 };

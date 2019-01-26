@@ -5,7 +5,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false
         
         },
-        vaccine_date: {
+        vaccineDate: {
             type: DataTypes.DATE,
             allowNull: false
         },
