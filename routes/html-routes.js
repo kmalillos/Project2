@@ -34,7 +34,12 @@ module.exports = function (app) {
     // });
 
     app.get("/petinfo", function (req, res) {
-        res.render("section");
+        db.PetInfo.findAll({})
+        .then(function(petInfoData) {
+            res.render("section", {
+                petInfo: petInfoData
+            });
+        })
     });
 
     app.get("/health", function (req, res) {
