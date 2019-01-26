@@ -15,8 +15,6 @@ var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
-
-
 // models needs to export db
 var db = require("../models");
 
@@ -31,7 +29,8 @@ module.exports = function (app) {
         res.render("index");
     });
 
-    app.get("/home", isAuthenticated, function (req, res) {
+    // app.get("/home", isAuthenticated, function (req, res) {
+        app.get("/home", function (req, res) {
         res.render("home");
     });
 
@@ -46,7 +45,8 @@ module.exports = function (app) {
         db.PetInfo.findAll({})
         .then(function(petInfoData) {
             res.render("section", {
-                petInfo: petInfoData
+                petInfo: true,
+                data: petInfoData
             });
         })
     });
