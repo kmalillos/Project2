@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes){
     var Hygiene = sequelize.define("Hygiene", {
-        hygiene_type: {
+        hygieneType: {
             type: DataTypes.ENUM("groom", "nail clip", "bath"),
             allowNull: false
         
