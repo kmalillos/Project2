@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes){
     var PetInfo = sequelize.define("PetInfo", {
-        pet_name: {
+        petName: {
             type: DataTypes.STRING,
             allowNull: false
         
@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false
         }
     },{
-        freezeTable: true,
+        freezeTableName: true,
         timestamps: false
     });
 
