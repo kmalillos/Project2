@@ -3,19 +3,23 @@ module.exports = function(sequelize, DataTypes){
         hygieneType: {
             // type: DataTypes.ENUM("groom", "nail clip", "bath", "other"),
             type: DataTypes.STRING,
-            allowNull: false
-        
+            allowNull: false,
+            defaultValue: "Groom"
         },
-        timeReceived: {
-            type: DataTypes.TIME,
-            allowNull: false
+        // timeReceived: {
+        //     type: DataTypes.TIME,
+        //     allowNull: false
+        // },
+        createdAt: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW
         },
         notes: {
             type: DataTypes.TEXT
         }
     }, {
-        freezeTableName: true,
-            timestamps: false 
+        freezeTableName: true
+        // timestamps: false 
     });
     return Hygiene;
 };

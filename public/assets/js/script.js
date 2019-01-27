@@ -146,7 +146,7 @@ $("#addHygiene").on("submit", function (event) {
 
     var newHygiene = {
         hygieneType: $("#hygieneType").val(),
-        timeReceived: $("#timeReceived").val().trim(),
+        // timeReceived: $("#timeReceived").val().trim(),
         notes: $("#notes").val().trim(),
     }
 

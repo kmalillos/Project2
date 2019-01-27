@@ -342,7 +342,7 @@ module.exports = function (app) {
     app.post("/api/hygiene", function (req, res) {
         db.Hygiene.create({
             hygieneType: req.body.hygieneType,
-            timeReceived: req.body.timeReceived,
+            // timeReceived: req.body.timeReceived,
             notes: req.body.notes
         })
             .then(function (hygieneCreatedData) {
