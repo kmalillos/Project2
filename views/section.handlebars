@@ -16,19 +16,17 @@
 				<th>Breed</th>
 				<th>Weight</th>
 				<th>Age</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			{{!-- Our Handlebars code goes here! --}}
-
 			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{petName}}</td>
 				<td>{{breed}}</td>
 				<td>{{weight}}</td>
 				<td>{{age}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+				<td><i class="far fa-times-circle" id="deletePetInfo"></i></td>
 			</tr>
 			{{/each}}
 		</tbody>

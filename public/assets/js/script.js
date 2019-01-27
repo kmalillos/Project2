@@ -20,6 +20,23 @@ $("#addPetInfo").on("submit", function(event) {
     })
 });
 
+$("#deletePetInfo").on("click", function(){
+    // parents => helps to find tr
+    // grabs attribute
+var id = $(this).parents("tr").attr("data-id") // OR .data("id")
+// alert(id);
+
+$.ajax({
+    method: "DELETE",
+    url: `/api/petinfo/${id}`,
+    // url: "/api/contacts/" + id;,
+}).then(function(data) {
+    console.log("Pet info Deleted", data);
+    // location.href = "/petinfo";
+    location = location;
+})
+;});
+
 //  NEW SECTION 
 
 $("#addActivity").on("submit", function(event) {
