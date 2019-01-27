@@ -7,11 +7,9 @@ var db = require("../models");
 // -- require for authentication
 var passport = require("../config/passport");
 
-
 // ROUTING
 // =============================================================================
 
-// EXPORTED TO SERVER.JS
 module.exports = function (app) {
 
     // AUTHENTICATION

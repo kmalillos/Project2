@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes){
         petName: {
             type: DataTypes.STRING,
             allowNull: false
-        
         },
         breed: {
             type: DataTypes.STRING,
