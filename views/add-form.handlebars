@@ -7,12 +7,12 @@
     <br>
     <hr><br>
 
-{{!-- NEW SECTION --}}
+    {{!-- NEW SECTION --}}
 
-{{#if petInfo}}
+    {{#if petInfo}}
 
-    <h2>Add Pet Info</h2> 
-    
+    <h2>Add Pet Info</h2>
+
     <a class="nav-button btn btn-success float-right" href="/petinfo" role="button">Back</a>
 
     <br>
@@ -42,14 +42,14 @@
 
     </form>
 
-{{/if}}
+    {{/if}}
 
-{{!-- NEW SECTION --}}
+    {{!-- NEW SECTION --}}
 
-{{#if activityTracker}}
+    {{#if activityTracker}}
 
-    <h2>Add Activity</h2> 
-    
+    <h2>Add Activity</h2>
+
     <a class="nav-button btn btn-success float-right" href="/activity" role="button">Back</a>
 
     <br>
@@ -67,6 +67,14 @@
         </div>
 
         <div class="form-group">
+            <label for="startOrStop">Start/Stop</label>
+            <select id="startOrStop" class="form-control" name="startOrStop">
+                <option value="Start">Start</option>
+                <option value="Stop">Stop</option>
+            </select>
+        </div>
+
+        {{!-- <div class="form-group">
             <label for="startTime">Start Time</label>
             <input type="text" class="form-control" id="startTime" name="startTime" placeholder="Start Time">
         </div>
@@ -74,7 +82,7 @@
         <div class="form-group">
             <label for="endTime">End Time</label>
             <input type="text" class="form-control" id="endTime" name="endTime" placeholder="End Time">
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="notes">Notes</label>
@@ -84,15 +92,15 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-{{/if}}
+    {{/if}}
 
 
-{{!-- NEW SECTION --}}
+    {{!-- NEW SECTION --}}
 
-{{#if dietTracker}}
+    {{#if dietTracker}}
 
-    <h2>Add Meal</h2> 
-    
+    <h2>Add Meal</h2>
+
     <a class="nav-button btn btn-success float-right" href="/diet" role="button">Back</a>
 
     <br>
@@ -109,10 +117,10 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{!-- <div class="form-group">
             <label for="mealTime">Meal Time</label>
             <input type="text" class="form-control" id="mealTime" name="mealTime" placeholder="Meal Time">
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="notes">Notes</label>
@@ -122,14 +130,14 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-{{/if}}
+    {{/if}}
 
-{{!-- NEW SECTION --}}
+    {{!-- NEW SECTION --}}
 
-{{#if pottyTracker}}
+    {{#if pottyTracker}}
 
-    <h2>Add Potty Info</h2> 
-    
+    <h2>Add Potty Info</h2>
+
     <a class="nav-button btn btn-success float-right" href="/potty" role="button">Back</a>
 
     <br>
@@ -144,10 +152,10 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{!-- <div class="form-group">
             <label for="pottyTime">Potty Time</label>
             <input type="text" class="form-control" id="pottyTime" name="pottyTime" placeholder="Potty Time">
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="notes">Notes</label>
@@ -157,14 +165,14 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-{{/if}}
+    {{/if}}
 
-{{!-- NEW SECTION --}}
+    {{!-- NEW SECTION --}}
 
-{{#if hygiene}}
+    {{#if hygiene}}
 
-    <h2>Add Hygiene Info</h2> 
-    
+    <h2>Add Hygiene Info</h2>
+
     <a class="nav-button btn btn-success float-right" href="/hygiene" role="button">Back</a>
 
     <br>
@@ -181,10 +189,10 @@
             </select>
         </div>
 
-        <div class="form-group">
+        {{!-- <div class="form-group">
             <label for="timeReceived">Time Received</label>
             <input type="text" class="form-control" id="timeReceived" name="timeReceived" placeholder="Time Received">
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label for="notes">Notes</label>
@@ -194,7 +202,7 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-{{/if}}
+    {{/if}}
 
 
 </div>

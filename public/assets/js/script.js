@@ -40,8 +40,9 @@ $("#addActivity").on("submit", function (event) {
 
     var newActivity = {
         activityType: $("#activityType").val(),
-        startTime: $("#startTime").val().trim(),
-        endTime: $("#endTime").val(),
+        startOrStop: $("#startOrStop").val(),
+        // startTime: $("#startTime").val().trim(),
+        // endTime: $("#endTime").val(),
         notes: $("#notes").val().trim(),
     }
 
@@ -76,7 +77,7 @@ $("#addDiet").on("submit", function (event) {
 
     var newDiet = {
         mealType: $("#mealType").val(),
-        mealTime: $("#mealTime").val().trim(),
+        // mealTime: $("#mealTime").val().trim(),
         notes: $("#notes").val().trim(),
     }
 
@@ -111,7 +112,7 @@ $("#addPotty").on("submit", function (event) {
 
     var newPotty = {
         pottyType: $("#pottyType").val(),
-        pottyTime: $("#pottyTime").val().trim(),
+        // pottyTime: $("#pottyTime").val().trim(),
         notes: $("#notes").val().trim(),
     }
 
@@ -146,7 +147,7 @@ $("#addHygiene").on("submit", function (event) {
 
     var newHygiene = {
         hygieneType: $("#hygieneType").val(),
-        timeReceived: $("#timeReceived").val().trim(),
+        // timeReceived: $("#timeReceived").val().trim(),
         notes: $("#notes").val().trim(),
     }
 
