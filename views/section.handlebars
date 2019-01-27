@@ -215,32 +215,37 @@
 {{!-- SECTION --}}
 
 {{#if hygiene}}
-<h2>Hygiene</h2>
 
+	<h2>Hygiene Info</h2>
 
-<a class="nav-button btn btn-primary" href="/hygiene/add" role="button">Add Hygiene Info</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
 
-<table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Hygiene Type</th>
-			<th>Time Received</th>
-			<th>Notes</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{!-- Our Handlebars code goes here! --}}
-		{{#each data}}
-		<tr data-id={{id}}>
-			<td>{{hygieneType}}</td>
-			<td>{{timeReceived}}</td>
-			<td>{{notes}}</td>
-			{{!-- to add delete button later --}}
-			{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
-		</tr>
-		{{/each}}
-	</tbody>
-</table>
+	<br><br>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Hygiene Type</th>
+				<th>Time Received</th>
+				<th>Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each data}}
+			<tr data-id={{id}}>
+				<td>{{hygieneType}}</td>
+				<td>{{timeReceived}}</td>
+				<td>{{notes}}</td>
+				{{!-- to add delete button later --}}
+				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/hygiene/add" role="button">Add Hygiene Info</a>
 {{/if}}
 
 

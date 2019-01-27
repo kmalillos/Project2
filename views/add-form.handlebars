@@ -159,5 +159,42 @@
     </form>
 {{/if}}
 
+{{!-- NEW SECTION --}}
+
+{{#if hygiene}}
+
+    <h2>Add Hygiene Info</h2> 
+    
+    <a class="nav-button btn btn-success float-right" href="/hygiene" role="button">Back</a>
+
+    <br>
+
+    <form id="addHygiene">
+        <div class="form-group">
+
+            <label for="hygieneType">Type</label>
+            <select id="hygieneType" class="form-control" name="hygieneType">
+                <option value="Groom">Groom</option>
+                <option value="Nail Clip">Nail Clip</option>
+                <option value="Bath">Bath</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="timeReceived">Time Received</label>
+            <input type="text" class="form-control" id="timeReceived" name="timeReceived" placeholder="Time Received">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+{{/if}}
+
 
 </div>

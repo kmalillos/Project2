@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes){
     var Hygiene = sequelize.define("Hygiene", {
         hygieneType: {
-            type: DataTypes.ENUM("groom", "nail clip", "bath"),
+            // type: DataTypes.ENUM("groom", "nail clip", "bath", "other"),
+            type: DataTypes.STRING,
             allowNull: false
         
         },
@@ -10,8 +11,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false
         },
         notes: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.TEXT
         }
     }, {
         freezeTableName: true,

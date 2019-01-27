@@ -99,29 +99,24 @@ module.exports = function (app) {
     });
 
     app.get("/hygiene", function (req, res) {
-        db.TolietTracker.findAll({})
-            .then(function (tolietTrackerData) {
+        db.Hygiene.findAll({})
+            .then(function (hygieneData) {
                 res.render("section", {
-                    tolietTracker: true,
-                    data: tolietTrackerData
+                    hygiene: true,
+                    data: hygieneData
                 });
             })
     });
 
-    // need to think about the forms...
+    // ADD-FORMS: need to think about simplifying
     // app.get("/:route/add", function (req, res) {
-
     //     if (routesList.includes(req.params.route)) {
-
     //         console.log("Yes! Section found!")
-
     //         return res.render("add-form");
-
     //     } else {
     //         console.log("No! Section not found.")
     //         res.end();
     //     }
-
     // });
 
     app.get("/petinfo/add", function (req, res) {
@@ -140,5 +135,8 @@ module.exports = function (app) {
         return res.render("add-form", {pottyTracker: true});
     });
 
+    app.get("/hygiene/add", function (req, res) {
+        return res.render("add-form", {hygiene: true});
+    });
 
 };

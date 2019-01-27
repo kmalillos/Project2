@@ -284,7 +284,7 @@ module.exports = function (app) {
     // HYGIENE SECTION:
     // ===========================================================================
     app.get("/api/hygiene", function (req, res) {
-        db.hygiene.findAll({})
+        db.Hygiene.findAll({})
             .then(function (hygieneData) {
                 res.json(hygieneData);
             })
@@ -296,9 +296,9 @@ module.exports = function (app) {
 
     // this route should add a new petInfo to the table
     app.post("/api/hygiene", function (req, res) {
-        db.hygiene.create({
+        db.Hygiene.create({
             hygieneType: req.body.hygieneType,
-            timeReceived: req.body.breed,
+            timeReceived: req.body.timeReceived,
             notes: req.body.notes
         })
             .then(function (hygieneCreatedData) {

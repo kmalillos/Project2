@@ -1,3 +1,5 @@
+//  NEW SECTION 
+
 $("#addPetInfo").on("submit", function(event) {
     event.preventDefault();
 
@@ -61,7 +63,6 @@ $("#addDiet").on("submit", function(event) {
     })
 });
 
-
 // NEW SECTION
 
 $("#addPotty").on("submit", function(event) {
@@ -80,5 +81,26 @@ $("#addPotty").on("submit", function(event) {
     }).then(function(dietData) {
         console.log("New potty info added", newPotty); 
         location.href = "/potty"; 
+    })
+});
+
+// NEW SECTION
+
+$("#addHygiene").on("submit", function(event) {
+    event.preventDefault();
+
+    var newHygiene = {
+        hygieneType: $("#hygieneType").val(),
+        timeReceived: $("#timeReceived").val().trim(),
+        notes: $("#notes").val().trim(),
+    }
+
+    $.ajax({ 
+        method: "POST",
+        url: "/api/hygiene",
+        data: newHygiene
+    }).then(function(hygieneData) {
+        console.log("New hygiene info added", newHygiene); 
+        location.href = "/hygiene"; 
     })
 });
