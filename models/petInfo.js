@@ -3,7 +3,6 @@ module.exports = function(sequelize, DataTypes){
         petName: {
             type: DataTypes.STRING,
             allowNull: false
-        
         },
         breed: {
             type: DataTypes.STRING,
@@ -18,8 +17,8 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false
         }
     },{
-        freezeTableName: true,
-        timestamps: false
+        freezeTableName: true
+        // timestamps: false
     });
 
     return PetInfo;

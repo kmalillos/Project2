@@ -1,18 +1,12 @@
 // DEPENDENCIES
 // =============================================================
-    // // doesn't work
-// var express = require("express");
-// var router = express.Router(); 
-//     // Requiring path to so we can use relative routes to our HTML files
-// var path = require("path");
 
-// -- require sequelize in models
+// --- Require sequelize in Models directory
 var db = require("../models");
 
-// -- requiring our custom middleware for checking if a user is logged in
+// -- FOR AUTHENTICATION
+// -- Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-
-// var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
 
 // ROUTES
 // =============================================================
@@ -24,26 +18,36 @@ module.exports = function (app) {
     // =============================================================
 
     app.get("/", function (req, res) {
-        res.render("index");
+        // If the user already has an account send them to the members page
+        // if (req.user) {
+        //     res.render("home");
+        // }
+        res.render("login");
     });
 
     app.get("/signup", function (req, res) {
         res.render("signup");
     });
 
-    // app.get("/home", isAuthenticated, function (req, res) {
-    app.get("/home", function (req, res) {
-
-        // authentication here
+    app.get("/login", function (req, res) {
+        // If the user already has an account send them to the members page
         // if (req.user) {
         //     res.render("home");
-        // } else {
-        //     res.redirect("/")
         // }
-
-        res.render("home");
-
+        res.render("login");
     });
+
+    // Here we've add our isAuthenticated middleware to this route.
+    // If a user who is not logged in tries to access this route they will be redirected to the signup page
+    app.get("/home", isAuthenticated, function (req, res) {
+        res.render("home");
+    });
+
+    // // ***WHILE TESTING COMMENT OUT ABOVE AND USE CODE BELOW:***
+    // // and use link: http://localhost:8080/home
+    // app.get("/home", function (req, res) {
+    //     res.render("home");
+    // });
 
     // SECTIONS
     // =============================================================
@@ -106,6 +110,9 @@ module.exports = function (app) {
     // =============================================================
 
     // ADD-FORMS: need to think about simplifying
+
+    // var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
+
     // app.get("/:route/add", function (req, res) {
     //     if (routesList.includes(req.params.route)) {
     //         console.log("Yes! Section found!")
@@ -117,23 +124,23 @@ module.exports = function (app) {
     // });
 
     app.get("/petinfo/add", function (req, res) {
-        return res.render("add-form", {petInfo: true});
+        return res.render("add-form", { petInfo: true });
     });
 
     app.get("/activity/add", function (req, res) {
-        return res.render("add-form", {activityTracker: true});
+        return res.render("add-form", { activityTracker: true });
     });
 
     app.get("/diet/add", function (req, res) {
-        return res.render("add-form", {dietTracker: true});
+        return res.render("add-form", { dietTracker: true });
     });
 
     app.get("/potty/add", function (req, res) {
-        return res.render("add-form", {pottyTracker: true});
+        return res.render("add-form", { pottyTracker: true });
     });
 
     app.get("/hygiene/add", function (req, res) {
-        return res.render("add-form", {hygiene: true});
+        return res.render("add-form", { hygiene: true });
     });
 
 };
