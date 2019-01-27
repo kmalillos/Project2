@@ -18,6 +18,8 @@ $("#addPetInfo").on("submit", function(event) {
     })
 });
 
+//  NEW SECTION 
+
 $("#addActivity").on("submit", function(event) {
     event.preventDefault();
 
@@ -35,5 +37,26 @@ $("#addActivity").on("submit", function(event) {
     }).then(function(activityData) {
         console.log("New activity added", newActivity); 
         location.href = "/activity"; 
+    })
+});
+
+// NEW SECTION
+
+$("#addDiet").on("submit", function(event) {
+    event.preventDefault();
+
+    var newDiet = {
+        mealType: $("#mealType").val(),
+        mealTime:$("#mealTime").val().trim(),
+        notes: $("#notes").val().trim(),
+    }
+
+    $.ajax({ 
+        method: "POST",
+        url: "/api/diet",
+        data: newDiet
+    }).then(function(dietData) {
+        console.log("New diet added", newDiet); 
+        location.href = "/diet"; 
     })
 });

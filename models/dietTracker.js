@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
     var DietTracker = sequelize.define("DietTracker", {
-        dietType: {
-            type: DataTypes.ENUM("meal", "kong", "chews/bones"),
+        mealType: {
+            // type: DataTypes.ENUM("meal", "kong", "chews/bones", "other"),
+            type: DataTypes.STRING,
             allowNull: false,
         },
         mealTime: {
@@ -9,15 +10,11 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         notes: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-                freezeTableName: true,
-                timestamps: false
-        
+            type: DataTypes.TEXT
+        }
     }, {
         freezeTableName: true,
-            timestamps: false 
+        timestamps: false 
     });
     return DietTracker;
 };

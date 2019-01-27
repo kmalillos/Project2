@@ -36,7 +36,7 @@ module.exports = function (app) {
     // app.get("/home", isAuthenticated, function (req, res) {
     app.get("/home", function (req, res) {
 
-        // // authentication here
+        // authentication here
         // if (req.user) {
         //     res.render("home");
         // } else {
@@ -86,7 +86,6 @@ module.exports = function (app) {
                     data: dietTrackerData
                 });
             })
-        res.render("section");
     });
 
     app.get("/potty", function (req, res) {
@@ -97,7 +96,6 @@ module.exports = function (app) {
                     data: tolietTrackerData
                 });
             })
-        res.render("section");
     });
 
     app.get("/hygiene", function (req, res) {
@@ -108,7 +106,6 @@ module.exports = function (app) {
                     data: tolietTrackerData
                 });
             })
-        res.render("section");
     });
 
     // need to think about the forms...
@@ -133,6 +130,10 @@ module.exports = function (app) {
 
     app.get("/activity/add", function (req, res) {
         return res.render("add-form", {activityTracker: true});
+    });
+
+    app.get("/diet/add", function (req, res) {
+        return res.render("add-form", {dietTracker: true});
     });
 
 };

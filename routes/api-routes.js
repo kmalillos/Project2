@@ -188,7 +188,7 @@ module.exports = function (app) {
     });
 
 
-    // ACTIVITY SECTION - IN PROCESS:
+    // ACTIVITY SECTION - COMPLETED:
     // =============================================================================
     app.get("/api/activity", function (req, res) {
         db.ActivityTracker.findAll({})
@@ -211,6 +211,37 @@ module.exports = function (app) {
             .then(function (activitytrackerCreatedData) {
                 console.log("New activity info created", activitytrackerCreatedData.dataValues);
                 res.json(activitytrackerCreatedData);
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err)
+            })
+    });
+
+    // DIET SECTION - in progress:
+    // ===========================================================================
+
+    app.get("/api/diet", function (req, res) {
+        db.DietTracker.findAll({})
+            .then(function (dietData) {
+                res.json(dietData);
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err)
+            })
+    });
+
+    app.post("/api/diet", function (req, res) {
+        db.DietTracker.create({
+            mealType: req.body.mealType,
+            mealTime: req.body.mealTime,
+            notes: req.body.notes
+        })
+            .then(function (diettrackerCreatedData) {
+                // .dataValues = specifies what data to console.log
+                console.log("New diet info created", diettrackerCreatedData.dataValues);
+                res.json(diettrackerCreatedData);
             })
             .catch(function (err) {
                 console.log(err);
@@ -276,38 +307,6 @@ module.exports = function (app) {
                 // .dataValues = specifies what data to console.log
                 console.log("New bathroom info created", toliettrackerCreatedData.dataValues);
                 res.json(toliettrackerCreatedData);
-            })
-            .catch(function (err) {
-                console.log(err);
-                res.json(err)
-            })
-    });
-
-
-    // DIET SECTION:
-    // ===========================================================================
-
-    app.get("/api/diettracker", function (req, res) {
-        db.DietTracker.findAll({})
-            .then(function (dietData) {
-                res.json(dietData);
-            })
-            .catch(function (err) {
-                console.log(err);
-                res.json(err)
-            })
-    });
-
-    app.post("/api/diettracker", function (req, res) {
-        db.DietTracker.create({
-            dietType: req.body.dietType,
-            mealTime: req.body.mealTime,
-            notes: req.body.notes
-        })
-            .then(function (diettrackerCreatedData) {
-                // .dataValues = specifies what data to console.log
-                console.log("New diet info created", diettrackerCreatedData.dataValues);
-                res.json(diettrackerCreatedData);
             })
             .catch(function (err) {
                 console.log(err);
