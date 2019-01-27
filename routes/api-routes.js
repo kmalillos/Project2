@@ -100,18 +100,16 @@ module.exports = function (app) {
 
     });
 
-    // ** WORK ON DELETE LATER
-    // this route should delete a contact from the table, if the id matches the ':id' url param
     app.delete("/api/petinfo/:id", function(req, res) {
         db.PetInfo.destroy({
             where: {
                 id: req.params.id
             }
         })
-        .then(function(petInfoDeleted) {
+        .then(function(data) {
             // .dataValues = specifies what data to console.log
-            console.log("Delected pet info", petInfoDeleted.dataValues)
-            res.json(petInfoDeleted);
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
         })
         .catch(function(err) {
             console.log(err);
@@ -212,6 +210,23 @@ module.exports = function (app) {
             })
     });
 
+    app.delete("/api/activity/:id", function(req, res) {
+        db.ActivityTracker.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
+    });
+
     // DIET SECTION
     // ===========================================================================
 
@@ -241,6 +256,24 @@ module.exports = function (app) {
                 console.log(err);
                 res.json(err)
             })
+    });
+
+    
+    app.delete("/api/diet/:id", function(req, res) {
+        db.DietTracker.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
     });
 
     // POTTY SECTION
@@ -275,6 +308,23 @@ module.exports = function (app) {
             })
     });
 
+    app.delete("/api/potty/:id", function(req, res) {
+        db.PottyTracker.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
+    });
+
     // HYGIENE SECTION
     // ===========================================================================
     app.get("/api/hygiene", function (req, res) {
@@ -304,6 +354,24 @@ module.exports = function (app) {
                 console.log(err);
                 res.json(err)
             })
+    });
+
+    
+    app.delete("/api/hygiene/:id", function(req, res) {
+        db.Hygiene.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
     });
 
 }; //CLOSE MODULE.EXPORTS
