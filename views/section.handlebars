@@ -135,7 +135,7 @@
 	</table>
 
 	<br>
-	
+
 	<a class="nav-button btn btn-primary" href="/activity/add" role="button">Add Activity</a>
 {{/if}}
 
@@ -173,6 +173,43 @@
 	<br>
 
 	<a class="nav-button btn btn-primary" href="/diet/add" role="button">Add Meal</a>
+{{/if}}
+
+{{!-- SECTION --}}
+
+{{#if pottyTracker}}
+
+	<h2>Potty Tracker</h2>
+
+	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+
+	<br><br>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Potty Type</th>
+				<th>Potty Time</th>
+				<th>Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{!-- Our Handlebars code goes here! --}}
+			{{#each data}}
+			<tr data-id={{id}}>
+				<td>{{pottyType}}</td>
+				<td>{{pottyTime}}</td>
+				<td>{{notes}}</td>
+				{{!-- to add delete button later --}}
+				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/potty/add" role="button">Add Potty Info</a>
 {{/if}}
 
 {{!-- SECTION --}}

@@ -60,3 +60,25 @@ $("#addDiet").on("submit", function(event) {
         location.href = "/diet"; 
     })
 });
+
+
+// NEW SECTION
+
+$("#addPotty").on("submit", function(event) {
+    event.preventDefault();
+
+    var newPotty = {
+        pottyType: $("#pottyType").val(),
+        pottyTime:$("#pottyTime").val().trim(),
+        notes: $("#notes").val().trim(),
+    }
+
+    $.ajax({ 
+        method: "POST",
+        url: "/api/potty",
+        data: newPotty
+    }).then(function(dietData) {
+        console.log("New potty info added", newPotty); 
+        location.href = "/potty"; 
+    })
+});

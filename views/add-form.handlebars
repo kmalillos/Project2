@@ -124,5 +124,40 @@
     </form>
 {{/if}}
 
+{{!-- NEW SECTION --}}
+
+{{#if pottyTracker}}
+
+    <h2>Add Potty Info</h2> 
+    
+    <a class="nav-button btn btn-success float-right" href="/potty" role="button">Back</a>
+
+    <br>
+
+    <form id="addPotty">
+        <div class="form-group">
+
+            <label for="pottyType">Potty Type</label>
+            <select id="pottyType" class="form-control" name="pottyType">
+                <option value="Pee">Pee</option>
+                <option value="Poo">Poo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="pottyTime">Potty Time</label>
+            <input type="text" class="form-control" id="pottyTime" name="pottyTime" placeholder="Potty Time">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+{{/if}}
+
 
 </div>

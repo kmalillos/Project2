@@ -89,11 +89,11 @@ module.exports = function (app) {
     });
 
     app.get("/potty", function (req, res) {
-        db.TolietTracker.findAll({})
-            .then(function (tolietTrackerData) {
+        db.PottyTracker.findAll({})
+            .then(function (pottyTrackerData) {
                 res.render("section", {
-                    tolietTracker: true,
-                    data: tolietTrackerData
+                    pottyTracker: true,
+                    data: pottyTrackerData
                 });
             })
     });
@@ -135,5 +135,10 @@ module.exports = function (app) {
     app.get("/diet/add", function (req, res) {
         return res.render("add-form", {dietTracker: true});
     });
+
+    app.get("/potty/add", function (req, res) {
+        return res.render("add-form", {pottyTracker: true});
+    });
+
 
 };
