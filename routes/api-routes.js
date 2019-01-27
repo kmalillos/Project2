@@ -294,7 +294,7 @@ module.exports = function (app) {
     app.post("/api/potty", function (req, res) {
         db.PottyTracker.create({
             pottyType: req.body.pottyType,
-            pottyTime: req.body.pottyTime,
+            // pottyTime: req.body.pottyTime,
             notes: req.body.notes
         })
             .then(function (newPottyData) {

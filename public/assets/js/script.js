@@ -111,7 +111,7 @@ $("#addPotty").on("submit", function (event) {
 
     var newPotty = {
         pottyType: $("#pottyType").val(),
-        pottyTime: $("#pottyTime").val().trim(),
+        // pottyTime: $("#pottyTime").val().trim(),
         notes: $("#notes").val().trim(),
     }
 
