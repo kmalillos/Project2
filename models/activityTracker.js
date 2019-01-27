@@ -3,22 +3,32 @@ module.exports = function(sequelize, DataTypes){
         activityType: {
             // type: DataTypes.ENUM("walk", "dog park", "daycare", "other"),
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            defaultValue: "Walk"
         },
-        startTime: {
-            type: DataTypes.TIME,
-            allowNull: false
+        startOrStop: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: "Start"
         },
-        endTime: {
-            type: DataTypes.TIME,
-            allowNull: false
+        // startTime: {
+        //     type: DataTypes.TIME,
+        //     allowNull: false
+        // },
+        // endTime: {
+        //     type: DataTypes.TIME,
+        //     allowNull: false
+        // },
+        createdAt: {
+            type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW
         },
         notes: {
             type: DataTypes.TEXT
         }
     }, {
         freezeTableName: true,
-        timestamps: false 
+        // timestamps: false 
     });
 
     return ActivityTracker;

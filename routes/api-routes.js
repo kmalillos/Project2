@@ -67,7 +67,7 @@ module.exports = function (app) {
     });
 
 
-    // PET INFO SECTION - COMPLETE!
+    // PET INFO SECTION
     // =============================================================================
     app.get("/api/petinfo", function (req, res) {
         db.PetInfo.findAll({})
@@ -80,7 +80,6 @@ module.exports = function (app) {
             })
     });
 
-    // this route should add a new petInfo to the table
     app.post("/api/petinfo", function (req, res) {
         db.PetInfo.create({
             petName: req.body.petName,
@@ -196,8 +195,9 @@ module.exports = function (app) {
     app.post("/api/activity", function (req, res) {
         db.ActivityTracker.create({
             activityType: req.body.activityType,
-            startTime: req.body.startTime,
-            endTime: req.body.endTime,
+            startOrStop: req.body.startOrStop,
+            // startTime: req.body.startTime,
+            // endTime: req.body.endTime,
             notes: req.body.notes
         })
             .then(function (activitytrackerCreatedData) {

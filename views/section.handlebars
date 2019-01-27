@@ -113,8 +113,8 @@
 		<thead class="thead-dark">
 			<tr>
 				<th>Activity Type</th>
-				<th>Start Time</th>
-				<th>End Time</th>
+				<th>Start/Stop</th>
+				<th>When</th>
 				<th>Notes</th>
 				<th></th>
 			</tr>
@@ -123,8 +123,8 @@
 			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{activityType}}</td>
-				<td>{{startTime}}</td>
-				<td>{{endTime}}</td>
+				<td>{{startOrStop}}</td>
+				<td>{{createdAt}}</td>
 				<td>{{notes}}</td>
 				<td><i class="far fa-times-circle" id="deleteActivity"></i></td>
 			</tr>

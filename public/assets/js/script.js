@@ -40,8 +40,9 @@ $("#addActivity").on("submit", function (event) {
 
     var newActivity = {
         activityType: $("#activityType").val(),
-        startTime: $("#startTime").val().trim(),
-        endTime: $("#endTime").val(),
+        startOrStop: $("#startOrStop").val(),
+        // startTime: $("#startTime").val().trim(),
+        // endTime: $("#endTime").val(),
         notes: $("#notes").val().trim(),
     }
 
