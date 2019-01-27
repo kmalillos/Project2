@@ -12,7 +12,7 @@ var passport = require("../config/passport");
 
 module.exports = function (app) {
 
-    // AUTHENTICATION
+    // *** FOR AUTHENTICATION ***
     // =============================================================================
 
     // Using the passport.authenticate middleware with our local strategy.

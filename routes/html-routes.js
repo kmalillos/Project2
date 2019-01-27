@@ -8,8 +8,6 @@ var db = require("../models");
 // -- Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-// var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
-
 // ROUTES
 // =============================================================
 
@@ -112,6 +110,9 @@ module.exports = function (app) {
     // =============================================================
 
     // ADD-FORMS: need to think about simplifying
+
+    // var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
+
     // app.get("/:route/add", function (req, res) {
     //     if (routesList.includes(req.params.route)) {
     //         console.log("Yes! Section found!")
