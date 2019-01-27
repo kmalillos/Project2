@@ -5,7 +5,7 @@
 {{#if petInfo}}
 	<h2>Pet Info</h2>
 
-	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button"><i class="fas fa-home"></i></a>
 
 	<br><br>
 
@@ -16,19 +16,17 @@
 				<th>Breed</th>
 				<th>Weight</th>
 				<th>Age</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			{{!-- Our Handlebars code goes here! --}}
-
 			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{petName}}</td>
 				<td>{{breed}}</td>
 				<td>{{weight}}</td>
 				<td>{{age}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+				<td><i class="far fa-times-circle" id="deletePetInfo"></i></td>
 			</tr>
 			{{/each}}
 		</tbody>
@@ -52,11 +50,11 @@
 				<th>Weight</th>
 				<th>Phone Number</th>
 				<th>Address</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			{{!-- Our Handlebars code goes here! --}}
-
 			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{hospital}}</td>
@@ -84,11 +82,11 @@
 				<th>Vaccines</th>
 				<th>Vaccine Date</th>
 				<th>Vaccine Expirations</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
 			{{!-- Our Handlebars code goes here! --}}
-
 			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{vaccines}}</td>
@@ -107,7 +105,7 @@
 {{#if activityTracker}}
 	<h2>Activity Tracker</h2>
 
-	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button"><i class="fas fa-home"></i></a>
 
 	<br><br>
 
@@ -118,6 +116,7 @@
 				<th>Start Time</th>
 				<th>End Time</th>
 				<th>Notes</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -127,8 +126,7 @@
 				<td>{{startTime}}</td>
 				<td>{{endTime}}</td>
 				<td>{{notes}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+				<td><i class="far fa-times-circle" id="deleteActivity"></i></td>
 			</tr>
 			{{/each}}
 		</tbody>
@@ -144,7 +142,7 @@
 {{#if dietTracker}}
 	<h2>Diet Tracker</h2>
 
-	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button"><i class="fas fa-home"></i></a>
 
 	<br><br>
 
@@ -154,17 +152,16 @@
 				<th>Meal Type</th>
 				<th>Meal Time</th>
 				<th>Notes</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			{{!-- Our Handlebars code goes here! --}}
 			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{mealType}}</td>
 				<td>{{mealTime}}</td>
 				<td>{{notes}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+				<td><i class="far fa-times-circle" id="deleteDiet"></i></td>
 			</tr>
 			{{/each}}
 		</tbody>
@@ -181,7 +178,7 @@
 
 	<h2>Potty Tracker</h2>
 
-	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button"><i class="fas fa-home"></i></a>
 
 	<br><br>
 
@@ -191,17 +188,16 @@
 				<th>Potty Type</th>
 				<th>Potty Time</th>
 				<th>Notes</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
-			{{!-- Our Handlebars code goes here! --}}
 			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{pottyType}}</td>
 				<td>{{pottyTime}}</td>
 				<td>{{notes}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+				<td><i class="far fa-times-circle" id="deletePotty"></i></td>
 			</tr>
 			{{/each}}
 		</tbody>
@@ -218,7 +214,7 @@
 
 	<h2>Hygiene Info</h2>
 
-	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button"><i class="fas fa-home"></i></a>
 
 	<br><br>
 
@@ -228,6 +224,7 @@
 				<th>Hygiene Type</th>
 				<th>Time Received</th>
 				<th>Notes</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -236,8 +233,7 @@
 				<td>{{hygieneType}}</td>
 				<td>{{timeReceived}}</td>
 				<td>{{notes}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+				<td><i class="far fa-times-circle" id="deleteHygiene"></i></td>
 			</tr>
 			{{/each}}
 		</tbody>

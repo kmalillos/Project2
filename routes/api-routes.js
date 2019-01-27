@@ -1,8 +1,10 @@
 // DEPENDENCIES
 // =============================================================================
 
-// --- access to everything sequelize. lives in index.js ---
+// -- require sequelize in models
 var db = require("../models");
+
+// -- require for authentication
 var passport = require("../config/passport");
 
 
@@ -12,7 +14,7 @@ var passport = require("../config/passport");
 // EXPORTED TO SERVER.JS
 module.exports = function (app) {
 
-    // AUTHENTICATION:
+    // AUTHENTICATION
     // =============================================================================
 
     // Using the passport.authenticate middleware with our local strategy.
@@ -98,32 +100,22 @@ module.exports = function (app) {
 
     });
 
-    // // to test POST in Postman
-    // {
-    //     "pet_name": "Lola",
-    //     "breed": "Airedoodle",
-    //     "weight": "26",
-    //     "age": "1"
-    // }
-
-    // // ** WORK ON DELETE LATER
-    // // this route should delete a contact from the table, if the id matches the ':id' url param
-    // app.delete("/api/petinfo/:id", function(req, res) {
-    //     db.Contact.destroy({
-    //         where: {
-    //             id: req.params.id
-    //         }
-    //     })
-    //     .then(function(petInfoDeleted) {
-    //         // .dataValues = specifies what data to console.log
-    //         console.log("Delected pet info", petInfoDeleted.dataValues)
-    //         res.json(petInfoDeleted);
-    //     })
-    //     .catch(function(err) {
-    //         console.log(err);
-    //         res.json(err)
-    //     })
-    // });
+    app.delete("/api/petinfo/:id", function(req, res) {
+        db.PetInfo.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
+    });
 
 
     // VET INFO - ICEBOX
@@ -188,7 +180,7 @@ module.exports = function (app) {
     });
 
 
-    // ACTIVITY SECTION - COMPLETED:
+    // ACTIVITY SECTION
     // =============================================================================
     app.get("/api/activity", function (req, res) {
         db.ActivityTracker.findAll({})
@@ -218,7 +210,24 @@ module.exports = function (app) {
             })
     });
 
-    // DIET SECTION - in progress:
+    app.delete("/api/activity/:id", function(req, res) {
+        db.ActivityTracker.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
+    });
+
+    // DIET SECTION
     // ===========================================================================
 
     app.get("/api/diet", function (req, res) {
@@ -249,7 +258,25 @@ module.exports = function (app) {
             })
     });
 
-    // POTTY SECTION:
+    
+    app.delete("/api/diet/:id", function(req, res) {
+        db.DietTracker.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
+    });
+
+    // POTTY SECTION
     // ===========================================================================
 
     app.get("/api/potty", function (req, res) {
@@ -281,7 +308,24 @@ module.exports = function (app) {
             })
     });
 
-    // HYGIENE SECTION:
+    app.delete("/api/potty/:id", function(req, res) {
+        db.PottyTracker.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
+    });
+
+    // HYGIENE SECTION
     // ===========================================================================
     app.get("/api/hygiene", function (req, res) {
         db.Hygiene.findAll({})
@@ -310,6 +354,24 @@ module.exports = function (app) {
                 console.log(err);
                 res.json(err)
             })
+    });
+
+    
+    app.delete("/api/hygiene/:id", function(req, res) {
+        db.Hygiene.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
     });
 
 }; //CLOSE MODULE.EXPORTS

@@ -1,29 +1,27 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
-
-// Dependencies
+// DEPENDENCIES
 // =============================================================
-// // doesn't work
+    // // doesn't work
 // var express = require("express");
-// var router = express.Router();
+// var router = express.Router(); 
+//     // Requiring path to so we can use relative routes to our HTML files
+// var path = require("path");
 
-// Requiring path to so we can use relative routes to our HTML files
-var path = require("path");
-
-// Requiring our custom middleware for checking if a user is logged in
-var isAuthenticated = require("../config/middleware/isAuthenticated");
-
-
-// models needs to export db
+// -- require sequelize in models
 var db = require("../models");
 
-var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
+// -- requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-// // Routes
-// // =============================================================
+// var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
 
+// ROUTES
+// =============================================================
+
+// EXPORTED TO SERVER.JS
 module.exports = function (app) {
+
+    // LOGIN + HOME + AUTHENICATION
+    // =============================================================
 
     app.get("/", function (req, res) {
         res.render("index");
@@ -47,12 +45,8 @@ module.exports = function (app) {
 
     });
 
-    // // handlebars info example
-    // app.get("/info", function (req, res) {
-    //     db.PetInfo.findAll({}).then(queryData) {
-    //         res.render("section", {hbsObject: queryData})
-    //     }
-    // });
+    // SECTIONS
+    // =============================================================
 
     app.get("/petinfo", function (req, res) {
         db.PetInfo.findAll({})
@@ -107,6 +101,9 @@ module.exports = function (app) {
                 });
             })
     });
+
+    // ADD FORMS
+    // =============================================================
 
     // ADD-FORMS: need to think about simplifying
     // app.get("/:route/add", function (req, res) {
