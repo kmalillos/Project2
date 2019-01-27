@@ -19,62 +19,37 @@ module.exports = function (app) {
     // LOGIN + HOME + AUTHENICATION
     // =============================================================
 
-    // app.get("/", function (req, res) {
-    //     res.render("index");
-    // });
-
-    // app.get("/signup", function (req, res) {
-    //     res.render("signup");
-    // });
-
-    // // app.get("/home", isAuthenticated, function (req, res) {
-    // app.get("/home", function (req, res) {
-
-    //     // authentication here
-    //     // if (req.user) {
-    //     //     res.render("home");
-    //     // } else {
-    //     //     res.redirect("/")
-    //     // }
-
-    //     res.render("home");
-    // });
-
     app.get("/", function (req, res) {
         // If the user already has an account send them to the members page
-        if (req.user) {
-            //   res.redirect("/members");
-            // res.render("members", {user: req.user});
-            // res.render("members");
-            res.render("home");
-        }
-        // res.sendFile(path.join(__dirname, "../public/signup.html"));
+        // if (req.user) {
+        //     res.render("home");
+        // }
+        res.render("login");
+    });
+
+    app.get("/signup", function (req, res) {
         res.render("signup");
     });
 
     app.get("/login", function (req, res) {
         // If the user already has an account send them to the members page
-        if (req.user) {
-            //   res.redirect("/members");
-            // res.render("members");
-            res.render("home");
-        }
-        // res.sendFile(path.join(__dirname, "../public/login.html"));
+        // if (req.user) {
+        //     res.render("home");
+        // }
         res.render("login");
     });
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
-    // app.get("/members", isAuthenticated, function (req, res) {
-    //     // res.sendFile(path.join(__dirname, "../public/members.html"));
-    //     res.render("members");
-    // });
     app.get("/home", isAuthenticated, function (req, res) {
-        // res.sendFile(path.join(__dirname, "../public/members.html"));
         res.render("home");
     });
 
-
+    // // ***WHILE TESTING COMMENT OUT ABOVE AND USE CODE BELOW:***
+    // // and use link: http://localhost:8080/home
+    // app.get("/home", function (req, res) {
+    //     res.render("home");
+    // });
 
     // SECTIONS
     // =============================================================
