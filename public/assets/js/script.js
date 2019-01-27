@@ -76,7 +76,7 @@ $("#addDiet").on("submit", function (event) {
 
     var newDiet = {
         mealType: $("#mealType").val(),
-        mealTime: $("#mealTime").val().trim(),
+        // mealTime: $("#mealTime").val().trim(),
         notes: $("#notes").val().trim(),
     }
 

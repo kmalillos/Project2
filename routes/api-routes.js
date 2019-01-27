@@ -244,7 +244,7 @@ module.exports = function (app) {
     app.post("/api/diet", function (req, res) {
         db.DietTracker.create({
             mealType: req.body.mealType,
-            mealTime: req.body.mealTime,
+            // mealTime: req.body.mealTime,
             notes: req.body.notes
         })
             .then(function (newDietData) {
