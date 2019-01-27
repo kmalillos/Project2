@@ -1,3 +1,5 @@
+//  NEW SECTION 
+
 $("#addPetInfo").on("submit", function(event) {
     event.preventDefault();
 
@@ -18,6 +20,8 @@ $("#addPetInfo").on("submit", function(event) {
     })
 });
 
+//  NEW SECTION 
+
 $("#addActivity").on("submit", function(event) {
     event.preventDefault();
 
@@ -35,5 +39,68 @@ $("#addActivity").on("submit", function(event) {
     }).then(function(activityData) {
         console.log("New activity added", newActivity); 
         location.href = "/activity"; 
+    })
+});
+
+// NEW SECTION
+
+$("#addDiet").on("submit", function(event) {
+    event.preventDefault();
+
+    var newDiet = {
+        mealType: $("#mealType").val(),
+        mealTime:$("#mealTime").val().trim(),
+        notes: $("#notes").val().trim(),
+    }
+
+    $.ajax({ 
+        method: "POST",
+        url: "/api/diet",
+        data: newDiet
+    }).then(function(dietData) {
+        console.log("New diet added", newDiet); 
+        location.href = "/diet"; 
+    })
+});
+
+// NEW SECTION
+
+$("#addPotty").on("submit", function(event) {
+    event.preventDefault();
+
+    var newPotty = {
+        pottyType: $("#pottyType").val(),
+        pottyTime:$("#pottyTime").val().trim(),
+        notes: $("#notes").val().trim(),
+    }
+
+    $.ajax({ 
+        method: "POST",
+        url: "/api/potty",
+        data: newPotty
+    }).then(function(dietData) {
+        console.log("New potty info added", newPotty); 
+        location.href = "/potty"; 
+    })
+});
+
+// NEW SECTION
+
+$("#addHygiene").on("submit", function(event) {
+    event.preventDefault();
+
+    var newHygiene = {
+        hygieneType: $("#hygieneType").val(),
+        timeReceived: $("#timeReceived").val().trim(),
+        notes: $("#notes").val().trim(),
+    }
+
+    $.ajax({ 
+        method: "POST",
+        url: "/api/hygiene",
+        data: newHygiene
+    }).then(function(hygieneData) {
+        console.log("New hygiene info added", newHygiene); 
+        location.href = "/hygiene"; 
     })
 });

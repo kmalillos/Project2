@@ -7,87 +7,194 @@
     <br>
     <hr><br>
 
-    {{!-- SECTION --}}
+{{!-- NEW SECTION --}}
 
-    {{#if petInfo}}
+{{#if petInfo}}
+
+    <h2>Add Pet Info</h2> 
+    
+    <a class="nav-button btn btn-success float-right" href="/petinfo" role="button">Back</a>
+
+    <br>
+
     <form id="addPetInfo">
         <div class="form-group">
-            <!-- Pet Name -->
             <label for="petName">Pet Name</label>
             <input type="text" class="form-control" id="petName" name="petName" placeholder="Pet Name">
         </div>
 
         <div class="form-group">
-            <!-- Breed -->
             <label for="breed">Breed</label>
             <input type="text" class="form-control" id="breed" name="breed" placeholder="Breed">
         </div>
 
         <div class="form-group">
-            <!-- Weight -->
             <label for="weight">Weight (in pounds)</label>
             <input type="text" class="form-control" id="weight" name="weight" placeholder="Weight">
         </div>
 
         <div class="form-group">
-            <!-- Age -->
-            <label for="petName">Age (in years)</label>
+            <label for="age">Age (in years)</label>
             <input type="text" class="form-control" id="age" name="age" placeholder="Age">
         </div>
 
         <input type="submit" value="Submit" class="btn btn-primary">
 
-        <a class="nav-button btn btn-success" href="/home" role="button">
-            Home<span class="glyphicon glyphicon-home"></span>
-        </a>
+    </form>
+
+{{/if}}
+
+{{!-- NEW SECTION --}}
+
+{{#if activityTracker}}
+
+    <h2>Add Activity</h2> 
+    
+    <a class="nav-button btn btn-success float-right" href="/activity" role="button">Back</a>
+
+    <br>
+
+    <form id="addActivity">
+        <div class="form-group">
+            <label for="activityType">Activity Type</label>
+            <select id="activityType" class="form-control" name="activityType">
+                <option value="Walk">Walk</option>
+                <option value="Run">Run</option>
+                <option value="Dog Park">Dog Park</option>
+                <option value="Day Care">Day Care</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="startTime">Start Time</label>
+            <input type="text" class="form-control" id="startTime" name="startTime" placeholder="Start Time">
+        </div>
+
+        <div class="form-group">
+            <label for="endTime">End Time</label>
+            <input type="text" class="form-control" id="endTime" name="endTime" placeholder="End Time">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-    {{/if}}
-
-    {{!-- SECTION --}}
-
-    {{#if activityTracker}}
-        <form id="addActivity">
-            <div class="form-group">
-                <!-- Activity Type -->
-                <label for="activityType">Activity Type</label>
-                <select id="activityType" class="form-control" name="activityType">
-                    <option value="Personal">Walk</option>
-                    <option value="Run">Run</option>
-                    <option value="Dog Park">Dog Park</option>
-                    <option value="Day Care">Day Care</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
+{{/if}}
 
 
-            <div class="form-group">
-                <!-- Start Time -->
-                <label for="startTime">Start Time</label>
-                <input type="text" class="form-control" id="startTime" name="startTime" placeholder="Start Time">
-            </div>
+{{!-- NEW SECTION --}}
 
-            <div class="form-group">
-                <!-- End Time -->
-                <label for="endTime">End Time</label>
-                <input type="text" class="form-control" id="endTime" name="endTime" placeholder="End Time">
-            </div>
+{{#if dietTracker}}
 
-            <div class="form-group">
-                <!-- Notes -->
-                <label for="petName">Notes</label>
-                <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
-            </div>
+    <h2>Add Meal</h2> 
+    
+    <a class="nav-button btn btn-success float-right" href="/diet" role="button">Back</a>
 
-            <input type="submit" value="Submit" class="btn btn-primary">
+    <br>
 
-            <a class="nav-button btn btn-success" href="/home" role="button">
-                Home<span class="glyphicon glyphicon-home"></span>
-	        </a>
+    <form id="addDiet">
+        <div class="form-group">
 
-        </form>
-    {{/if}}
+            <label for="mealType">Meal Type</label>
+            <select id="mealType" class="form-control" name="activityType">
+                <option value="Dog Food">Dog Food</option>
+                <option value="Chew or Bone">Chew or Bone</option>
+                <option value="Kong">Kong</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
 
+        <div class="form-group">
+            <label for="mealTime">Meal Time</label>
+            <input type="text" class="form-control" id="mealTime" name="mealTime" placeholder="Meal Time">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+{{/if}}
+
+{{!-- NEW SECTION --}}
+
+{{#if pottyTracker}}
+
+    <h2>Add Potty Info</h2> 
+    
+    <a class="nav-button btn btn-success float-right" href="/potty" role="button">Back</a>
+
+    <br>
+
+    <form id="addPotty">
+        <div class="form-group">
+
+            <label for="pottyType">Potty Type</label>
+            <select id="pottyType" class="form-control" name="pottyType">
+                <option value="Pee">Pee</option>
+                <option value="Poo">Poo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="pottyTime">Potty Time</label>
+            <input type="text" class="form-control" id="pottyTime" name="pottyTime" placeholder="Potty Time">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+{{/if}}
+
+{{!-- NEW SECTION --}}
+
+{{#if hygiene}}
+
+    <h2>Add Hygiene Info</h2> 
+    
+    <a class="nav-button btn btn-success float-right" href="/hygiene" role="button">Back</a>
+
+    <br>
+
+    <form id="addHygiene">
+        <div class="form-group">
+
+            <label for="hygieneType">Type</label>
+            <select id="hygieneType" class="form-control" name="hygieneType">
+                <option value="Groom">Groom</option>
+                <option value="Nail Clip">Nail Clip</option>
+                <option value="Bath">Bath</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="timeReceived">Time Received</label>
+            <input type="text" class="form-control" id="timeReceived" name="timeReceived" placeholder="Time Received">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes</label>
+            <input type="text" class="form-control" id="notes" name="notes" placeholder="Notes">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+{{/if}}
 
 
 </div>

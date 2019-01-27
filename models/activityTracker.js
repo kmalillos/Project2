@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes){
     var ActivityTracker = sequelize.define("ActivityTracker", {
         activityType: {
-            type: DataTypes.ENUM("walk", "dog park", "daycare", "other"),
+            // type: DataTypes.ENUM("walk", "dog park", "daycare", "other"),
+            type: DataTypes.STRING,
             allowNull: false
         },
         startTime: {

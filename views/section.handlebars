@@ -1,31 +1,27 @@
 <div class="vertical-center" id="index-page">
 
-{{!-- var routesList = ["petinfo","health", "activity", "diet","potty","hygiene"]; --}}
+{{!-- NEW SECTION --}}
 
 {{#if petInfo}}
-    <h2>Pet Info</h2> 
+	<h2>Pet Info</h2>
 
-    <a class="nav-button btn btn-success float-right" href="/home" role="button">
-		Home<span class="glyphicon glyphicon-home"></span>
-	</a>
-	
-	<a class="nav-button btn btn-primary float-right" href="/petinfo/add" role="button">Add Pet Info</a> 
+	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
 
 	<br><br>
 
-    <table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Pet Name</th>
-			<th>Breed</th>
-			<th>Weight</th>
-			<th>Age</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{!-- Our Handlebars code goes here! --}}
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Pet Name</th>
+				<th>Breed</th>
+				<th>Weight</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{!-- Our Handlebars code goes here! --}}
 
-		{{#each data}}
+			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{petName}}</td>
 				<td>{{breed}}</td>
@@ -34,32 +30,34 @@
 				{{!-- to add delete button later --}}
 				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
 			</tr>
-		{{/each}}
-	</tbody>
-</table>
+			{{/each}}
+		</tbody>
+	</table>
+	<br>
+	<a class="nav-button btn btn-primary" href="/petinfo/add" role="button">Add Pet Info</a>
 {{/if}}
 
-{{!-- SECTION --}}
+{{!-- NEW SECTION --}}
 
 {{#if vetInfo}}
-    <h2>Vet Info</h2>
+	<h2>Vet Info</h2>
 
-    <a class="nav-button btn btn-primary" href="/vetinfo/add" role="button">Add Vet Info</a>
+	<a class="nav-button btn btn-primary" href="/vetinfo/add" role="button">Add Vet Info</a>
 
-    <table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Hospital</th>
-			<th>Vet Name</th>
-			<th>Weight</th>
-			<th>Phone Number</th>
-			<th>Address</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{!-- Our Handlebars code goes here! --}}
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Hospital</th>
+				<th>Vet Name</th>
+				<th>Weight</th>
+				<th>Phone Number</th>
+				<th>Address</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{!-- Our Handlebars code goes here! --}}
 
-		{{#each data}}
+			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{hospital}}</td>
 				<td>{{vetName}}</td>
@@ -68,30 +66,30 @@
 				{{!-- to add delete button later --}}
 				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
 			</tr>
-		{{/each}}
-	</tbody>
-</table>
+			{{/each}}
+		</tbody>
+	</table>
 {{/if}}
 
 {{!-- SECTION --}}
 
-{{#if vaccinations}}
-    <h2>Vaccinations</h2>
+	{{#if vaccinations}}
+	<h2>Vaccinations</h2>
 
-    <a class="nav-button btn btn-primary" href="/vaccinations/add" role="button">Add Vaccination Info</a>
+	<a class="nav-button btn btn-primary" href="/vaccinations/add" role="button">Add Vaccination Info</a>
 
-    <table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Vaccines</th>
-			<th>Vaccine Date</th>
-			<th>Vaccine Expirations</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{!-- Our Handlebars code goes here! --}}
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Vaccines</th>
+				<th>Vaccine Date</th>
+				<th>Vaccine Expirations</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{!-- Our Handlebars code goes here! --}}
 
-		{{#each data}}
+			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{vaccines}}</td>
 				<td>{{vaccineDate}}</td>
@@ -99,37 +97,31 @@
 				{{!-- to add delete button later --}}
 				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
 			</tr>
-		{{/each}}
-	</tbody>
-</table>
+			{{/each}}
+		</tbody>
+	</table>
 {{/if}}
 
-{{!-- SECTION --}}
+{{!-- NEW SECTION --}}
 
 {{#if activityTracker}}
-    <h2>Activity Tracker</h2>
+	<h2>Activity Tracker</h2>
 
-    <a class="nav-button btn btn-success float-right" href="/home" role="button">
-		Home<span class="glyphicon glyphicon-home"></span>
-	</a>
-	
-	<a class="nav-button btn btn-primary float-right" href="/activity/add" role="button">Add Activity</a> 
+	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
 
 	<br><br>
 
-    <table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Activity Type</th>
-			<th>Start Time</th>
-			<th>End Time</th>
-			<th>Notes</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{!-- Our Handlebars code goes here! --}}
-
-		{{#each data}}
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Activity Type</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{activityType}}</td>
 				<td>{{startTime}}</td>
@@ -138,30 +130,108 @@
 				{{!-- to add delete button later --}}
 				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
 			</tr>
-		{{/each}}
-	</tbody>
-</table>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/activity/add" role="button">Add Activity</a>
+{{/if}}
+
+{{!-- NEW SECTION --}}
+
+{{#if dietTracker}}
+	<h2>Diet Tracker</h2>
+
+	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+
+	<br><br>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Meal Type</th>
+				<th>Meal Time</th>
+				<th>Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{!-- Our Handlebars code goes here! --}}
+			{{#each data}}
+			<tr data-id={{id}}>
+				<td>{{mealType}}</td>
+				<td>{{mealTime}}</td>
+				<td>{{notes}}</td>
+				{{!-- to add delete button later --}}
+				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/diet/add" role="button">Add Meal</a>
+{{/if}}
+
+{{!-- SECTION --}}
+
+{{#if pottyTracker}}
+
+	<h2>Potty Tracker</h2>
+
+	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
+
+	<br><br>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Potty Type</th>
+				<th>Potty Time</th>
+				<th>Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{!-- Our Handlebars code goes here! --}}
+			{{#each data}}
+			<tr data-id={{id}}>
+				<td>{{pottyType}}</td>
+				<td>{{pottyTime}}</td>
+				<td>{{notes}}</td>
+				{{!-- to add delete button later --}}
+				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/potty/add" role="button">Add Potty Info</a>
 {{/if}}
 
 {{!-- SECTION --}}
 
 {{#if hygiene}}
-    <h2>Hygiene</h2>
 
-    <a class="nav-button btn btn-primary" href="/hygiene/add" role="button">Add Hygiene Info</a>
+	<h2>Hygiene Info</h2>
 
-    <table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Hygiene Type</th>
-			<th>Time Received</th>
-			<th>Notes</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{!-- Our Handlebars code goes here! --}}
+	<a class="nav-button btn btn-success float-right" href="/home" role="button">Home</a>
 
-		{{#each data}}
+	<br><br>
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Hygiene Type</th>
+				<th>Time Received</th>
+				<th>Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each data}}
 			<tr data-id={{id}}>
 				<td>{{hygieneType}}</td>
 				<td>{{timeReceived}}</td>
@@ -169,40 +239,14 @@
 				{{!-- to add delete button later --}}
 				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
 			</tr>
-		{{/each}}
-	</tbody>
-</table>
+			{{/each}}
+		</tbody>
+	</table>
+	
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/hygiene/add" role="button">Add Hygiene Info</a>
 {{/if}}
 
-{{!-- SECTION --}}
-
-{{#if dietTracker}}
-    <h2>Diet Tracker</h2>
-
-    <a class="nav-button btn btn-primary" href="/diet/add" role="button">Add Diet Info</a>
-
-    <table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Diet Type</th>
-			<th>Meal Time</th>
-			<th>Notes</th>
-		</tr>
-	</thead>
-	<tbody>
-		{{!-- Our Handlebars code goes here! --}}
-
-		{{#each data}}
-			<tr data-id={{id}}>
-				<td>{{dietType}}</td>
-				<td>{{mealTime}}</td>
-				<td>{{notes}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
-{{/if}}
 
 </div>

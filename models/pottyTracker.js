@@ -1,21 +1,21 @@
 module.exports = function(sequelize, DataTypes){
-    var Hygiene = sequelize.define("Hygiene", {
-        hygieneType: {
-            type: DataTypes.ENUM("groom", "nail clip", "bath"),
+    var PottyTracker = sequelize.define("PottyTracker", {
+        pottyType: {
+            // type: DataTypes.ENUM("pee", "poo"),
+            type: DataTypes.STRING,
             allowNull: false
         
         },
-        timeReceived: {
+        pottyTime: {
             type: DataTypes.TIME,
             allowNull: false
         },
         notes: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.TEXT,
         }
     }, {
         freezeTableName: true,
             timestamps: false 
     });
-    return Hygiene;
+    return PottyTracker;
 };

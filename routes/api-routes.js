@@ -188,7 +188,7 @@ module.exports = function (app) {
     });
 
 
-    // ACTIVITY SECTION - IN PROCESS:
+    // ACTIVITY SECTION - COMPLETED:
     // =============================================================================
     app.get("/api/activity", function (req, res) {
         db.ActivityTracker.findAll({})
@@ -218,11 +218,73 @@ module.exports = function (app) {
             })
     });
 
+    // DIET SECTION - in progress:
+    // ===========================================================================
+
+    app.get("/api/diet", function (req, res) {
+        db.DietTracker.findAll({})
+            .then(function (dietData) {
+                res.json(dietData);
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err)
+            })
+    });
+
+    app.post("/api/diet", function (req, res) {
+        db.DietTracker.create({
+            mealType: req.body.mealType,
+            mealTime: req.body.mealTime,
+            notes: req.body.notes
+        })
+            .then(function (newDietData) {
+                // .dataValues = specifies what data to console.log
+                console.log("New diet info created", newDietData.dataValues);
+                res.json(newDietData);
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err)
+            })
+    });
+
+    // POTTY SECTION:
+    // ===========================================================================
+
+    app.get("/api/potty", function (req, res) {
+        db.PottyTracker.findAll({})
+            .then(function (pottyTrackerData) {
+                res.json(pottyTrackerData);
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err)
+            })
+    });
+
+    // this route should add a new petInfo to the table
+    app.post("/api/potty", function (req, res) {
+        db.PottyTracker.create({
+            pottyType: req.body.pottyType,
+            pottyTime: req.body.pottyTime,
+            notes: req.body.notes
+        })
+            .then(function (newPottyData) {
+                // .dataValues = specifies what data to console.log
+                console.log("New potty info created", newPottyData.dataValues);
+                res.json(newPottyData);
+            })
+            .catch(function (err) {
+                console.log(err);
+                res.json(err)
+            })
+    });
 
     // HYGIENE SECTION:
     // ===========================================================================
     app.get("/api/hygiene", function (req, res) {
-        db.hygiene.findAll({})
+        db.Hygiene.findAll({})
             .then(function (hygieneData) {
                 res.json(hygieneData);
             })
@@ -234,80 +296,15 @@ module.exports = function (app) {
 
     // this route should add a new petInfo to the table
     app.post("/api/hygiene", function (req, res) {
-        db.hygiene.create({
+        db.Hygiene.create({
             hygieneType: req.body.hygieneType,
-            timeReceived: req.body.breed,
+            timeReceived: req.body.timeReceived,
             notes: req.body.notes
         })
             .then(function (hygieneCreatedData) {
                 // .dataValues = specifies what data to console.log
                 console.log("New hygiene info created", hygieneCreatedData.dataValues);
                 res.json(hygieneCreatedData);
-            })
-            .catch(function (err) {
-                console.log(err);
-                res.json(err)
-            })
-    });
-
-
-    // POTTY SECTION:
-    // ===========================================================================
-
-    app.get("/api/toliettracker", function (req, res) {
-        db.tolietTracker.findAll({})
-            .then(function (toliettrackerData) {
-                res.json(toliettrackerData);
-            })
-            .catch(function (err) {
-                console.log(err);
-                res.json(err)
-            })
-    });
-
-    // this route should add a new petInfo to the table
-    app.post("/api/toliettracker", function (req, res) {
-        db.tolietTracker.create({
-            bathroomType: req.body.bathroomType,
-            bathroomTime: req.body.bathroomTime,
-            notes: req.body.notes
-        })
-            .then(function (toliettrackerCreatedData) {
-                // .dataValues = specifies what data to console.log
-                console.log("New bathroom info created", toliettrackerCreatedData.dataValues);
-                res.json(toliettrackerCreatedData);
-            })
-            .catch(function (err) {
-                console.log(err);
-                res.json(err)
-            })
-    });
-
-
-    // DIET SECTION:
-    // ===========================================================================
-
-    app.get("/api/diettracker", function (req, res) {
-        db.DietTracker.findAll({})
-            .then(function (dietData) {
-                res.json(dietData);
-            })
-            .catch(function (err) {
-                console.log(err);
-                res.json(err)
-            })
-    });
-
-    app.post("/api/diettracker", function (req, res) {
-        db.DietTracker.create({
-            dietType: req.body.dietType,
-            mealTime: req.body.mealTime,
-            notes: req.body.notes
-        })
-            .then(function (diettrackerCreatedData) {
-                // .dataValues = specifies what data to console.log
-                console.log("New diet info created", diettrackerCreatedData.dataValues);
-                res.json(diettrackerCreatedData);
             })
             .catch(function (err) {
                 console.log(err);
