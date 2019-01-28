@@ -1,5 +1,5 @@
 body {
-    background: url("../img/background/brown-sleepy.jpg") no-repeat fixed center;
+    background: url("../img/background/puppy-sleepy.jpg") no-repeat fixed center;
     background-size: cover;
 }
 
@@ -24,13 +24,8 @@ body {
     margin: 15px;
 }
 
-.left-middle-margin {
-    width: 50%;
-    margin: 15px;
-}
-
 .left-wide-margin {
-    width: 66%;
+    width: 50%;
     margin: 15px;
 }
 
