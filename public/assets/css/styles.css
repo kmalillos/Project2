@@ -28,10 +28,8 @@ body {
 }
 
 .section-title {
-    background: transparent;
-    height: 200px;
-    width: 175px;
-    margin: 25px;
+    position: relative;
+    padding: 0
 }
 
 .icon {
