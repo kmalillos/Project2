@@ -35,6 +35,76 @@ $("#deletePetInfo").on("click", function () {
 
 //  NEW SECTION 
 
+$("#addVet").on("submit", function (event) {
+    event.preventDefault();
+
+    var newVet = {
+        hospital: $("#hospital").val().trim(),
+        vetName: $("#vetName").val().trim(),
+        phoneNumber: $("#phoneNumber").val(),
+        address: $("#address").val().trim(),
+    }
+    $.ajax({
+        method: "POST",
+        url: "/api/vet",
+        data: newVet
+    }).then(function (data) {
+        console.log("New vet info added", data);
+        location.href = "/vet";
+    })
+});
+
+$("#deleteVet").on("click", function () {
+    // parents => helps to find tr and grabs attribute
+    var id = $(this).parents("tr").attr("data-id");
+
+    $.ajax({
+        method: "DELETE",
+        url: `/api/petinfo/${id}`
+    }).then(function (data) {
+        console.log("Data Deleted", data);
+        location = location;
+    })
+});
+
+
+//  NEW SECTION 
+
+$("#addVaccine").on("submit", function (event) {
+    event.preventDefault();
+
+    var newVaccine = {
+        vaccineName: $("#vaccineName").val(),
+        vaccineDate: $("#vaccineDate").val(),
+        expires: $("#expires").val()
+    }
+
+    $.ajax({
+        method: "POST",
+        url: "/api/vaccines",
+        data: newVaccine
+    }).then(function (data) {
+        console.log("New vaccine added", data);
+        location.href = "/vaccines";
+    })
+});
+
+$("#deleteVaccine").on("click", function () {
+    // parents => helps to find tr and grabs attribute
+    var id = $(this).parents("tr").attr("data-id");
+
+    $.ajax({
+        method: "DELETE",
+        url: `/api/vaccines/${id}`
+    }).then(function (data) {
+        console.log("Data Deleted", data);
+        location = location;
+    })
+});
+
+
+//  NEW SECTION 
+
 $("#addActivity").on("submit", function (event) {
     event.preventDefault();
 

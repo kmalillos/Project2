@@ -62,10 +62,30 @@ module.exports = function (app) {
             })
     });
 
-    app.get("/health", function (req, res) {
-        res.render("section", {
-            health: true
-        });
+    // app.get("/health", function (req, res) {
+    //     res.render("section", {
+    //         health: true
+    //     });
+    // });
+
+    app.get("/vet", function (req, res) {
+        db.VetInfo.findAll({})
+            .then(function (vetInfoData) {
+                res.render("section", {
+                    vet: true,
+                    data: vetInfoData
+                });
+            })
+    });
+
+    app.get("/vaccines", function (req, res) {
+        db.Vaccinations.findAll({})
+            .then(function (vaccineData) {
+                res.render("section", {
+                    vaccinations: true,
+                    data: vaccineData
+                });
+            })
     });
 
     app.get("/activity", function (req, res) {
@@ -139,8 +159,16 @@ module.exports = function (app) {
         return res.render("add-form", { petInfo: true });
     });
 
+    app.get("/vet/add", function (req, res) {
+        return res.render("add-form", { vet: true });
+    });
+
+    app.get("/vaccines/add", function (req, res) {
+        return res.render("add-form", { vaccinations: true });
+    });
+
     app.get("/activity/add", function (req, res) {
-        return res.render("add-form", { activityTracker: true });
+        return res.render("add-form", { activity: true });
     });
 
     app.get("/diet/add", function (req, res) {

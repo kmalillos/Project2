@@ -1,8 +1,7 @@
-<div class="vertical-center" id="index-page">
+<div class="vertical-center left-narrow-margin">
 
     <h1>DoJo:</h1>
     <h3>Doggy Journal</h3>
-
 
     <br>
     <hr><br>
@@ -46,7 +45,77 @@
 
     {{!-- NEW SECTION --}}
 
-    {{#if activityTracker}}
+{{#if vet}}
+
+    <h2>Add Vet Info</h2>
+
+    <a class="nav-button btn btn-success float-right" href="/vet" role="button">Back</a>
+
+    <br>
+
+    <form id="addVet">
+            <div class="form-group">
+                <label for="hospital">Hospital/Clinic</label>
+                <input type="text" class="form-control" id="hospital" name="hospital" placeholder="Hospital or Clinic">
+            </div>
+
+            <div class="form-group">
+                <label for="vetName">Vet Name</label>
+                <input type="text" class="form-control" id="vetName" name="vetName" placeholder="Vet Name">
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-000-0000">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Address">
+            </div>
+
+            <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+
+{{/if}}
+
+
+{{!-- NEW SECTION --}}
+
+{{#if vaccinations}}
+
+    <h2>Add Vaccination</h2>
+
+    <a class="nav-button btn btn-success float-right" href="/vaccines" role="button">Back</a>
+
+    <br>
+
+        <form id="addVaccine">
+        <div class="form-group">
+            <label for="vaccineName">Vacinne</label>
+            <input type="text" class="form-control" id="vaccineName" name="vaccineName" placeholder="Vaccine">
+        </div>
+
+        <div class="form-group">
+            <label for="vaccineDate">Date Received</label>
+            <input type="date" class="form-control" id="vaccineDate" name="vaccineDate" placeholder="Date Received">
+        </div>
+
+        <div class="form-group">
+            <label for="expires">Expires</label>
+            <input type="date" class="form-control" id="expires" name="expires" placeholder="Expires">
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+
+{{/if}}
+
+{{!-- NEW SECTION --}}
+
+{{#if activityTracker}}
 
     <h2>Add Activity</h2>
 
@@ -92,12 +161,12 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-    {{/if}}
+{{/if}}
 
 
-    {{!-- NEW SECTION --}}
+{{!-- NEW SECTION --}}
 
-    {{#if dietTracker}}
+{{#if dietTracker}}
 
     <h2>Add Meal</h2>
 
@@ -130,11 +199,11 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-    {{/if}}
+{{/if}}
 
     {{!-- NEW SECTION --}}
 
-    {{#if pottyTracker}}
+{{#if pottyTracker}}
 
     <h2>Add Potty Info</h2>
 
@@ -165,9 +234,9 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-    {{/if}}
+{{/if}}
 
-    {{!-- NEW SECTION --}}
+{{!-- NEW SECTION --}}
 
     {{#if hygiene}}
 
@@ -202,7 +271,7 @@
         <input type="submit" value="Submit" class="btn btn-primary">
 
     </form>
-    {{/if}}
+{{/if}}
 
 
 </div>
