@@ -1,4 +1,4 @@
-<div class="vertical-center left-wide-margin">
+<div class="vertical-center left-middle-margin">
 
 {{!-- NEW SECTION --}}
 
@@ -35,13 +35,15 @@
 	<a class="nav-button btn btn-primary" href="/petinfo/add" role="button">Add Pet Info</a>
 {{/if}}
 
+
 {{!-- NEW SECTION --}}
 
 {{#if health}}
 
-<h2>Health info underconstruction.</h2>
+	<h2>Health info underconstruction.</h2>
 
 {{/if}}
+
 
 {{!-- NEW SECTION --}}
 
@@ -77,9 +79,10 @@
 	</table>
 {{/if}}
 
+
 {{!-- SECTION --}}
 
-	{{#if vaccinations}}
+{{#if vaccinations}}
 	<h2>Vaccinations</h2>
 
 	<a class="nav-button btn btn-primary" href="/vaccinations/add" role="button">Add Vaccination Info</a>
@@ -107,6 +110,7 @@
 		</tbody>
 	</table>
 {{/if}}
+
 
 {{!-- NEW SECTION --}}
 
@@ -145,6 +149,7 @@
 	<a class="nav-button btn btn-primary" href="/activity/add" role="button">Add Activity</a>
 {{/if}}
 
+
 {{!-- NEW SECTION --}}
 
 {{#if dietTracker}}
@@ -179,6 +184,7 @@
 
 	<a class="nav-button btn btn-primary" href="/diet/add" role="button">Add Meal</a>
 {{/if}}
+
 
 {{!-- SECTION --}}
 
@@ -216,6 +222,7 @@
 	<a class="nav-button btn btn-primary" href="/potty/add" role="button">Add Potty Info</a>
 {{/if}}
 
+
 {{!-- SECTION --}}
 
 {{#if hygiene}}
@@ -246,7 +253,7 @@
 			{{/each}}
 		</tbody>
 	</table>
-	
+
 	<br>
 
 	<a class="nav-button btn btn-primary" href="/hygiene/add" role="button">Add Hygiene Info</a>
