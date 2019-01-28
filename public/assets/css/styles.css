@@ -15,7 +15,8 @@ body {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-  }
+}
+
 
 /* MARGINS */
 
@@ -29,6 +30,14 @@ body {
     margin: 15px;
 }
 
+
+.title-icon {
+    float: left;
+    margin-left: 5px;
+    margin-right: 15px;
+    height:100px;
+    width: 100px;
+}
 
 /* STICK FOOTER*/
 
