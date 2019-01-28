@@ -39,15 +39,15 @@ module.exports = function (app) {
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
-    // app.get("/home", isAuthenticated, function (req, res) {
-    //     res.render("home");
-    // });
+    app.get("/home", isAuthenticated, function (req, res) {
+        res.render("home");
+    });
 
     // // ***WHILE TESTING COMMENT OUT ABOVE AND USE CODE BELOW:***
     // // and use link: http://localhost:8080/home
-    app.get("/home", function (req, res) {
-        res.render("home");
-    });
+    // app.get("/home", function (req, res) {
+    //     res.render("home");
+    // });
 
     // SECTIONS
     // =============================================================
