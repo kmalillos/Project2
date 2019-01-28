@@ -5,8 +5,7 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false
         },
         vetName: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
         phoneNumber: {
             type: DataTypes.STRING,

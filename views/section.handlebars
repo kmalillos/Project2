@@ -1,4 +1,11 @@
-<div class="vertical-center left-wide-margin">
+<div class="left-wide-margin">
+
+	<img src="/assets/img/doghouse_icon.png" class="title-icon">
+
+    <h1>DoJo:</h1>
+    <h4>Dog Journal</h4>
+
+    <br><hr><br>
 
 {{!-- NEW SECTION --}}
 
@@ -9,104 +16,123 @@
 
 	<br><br>
 
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th>Pet Name</th>
-				<th>Breed</th>
-				<th>Weight</th>
-				<th>Age</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each data}}
-			<tr data-id={{id}}>
-				<td>{{petName}}</td>
-				<td>{{breed}}</td>
-				<td>{{weight}}</td>
-				<td>{{age}}</td>
-				<td><i class="far fa-times-circle" id="deletePetInfo"></i></td>
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
+	<div class="table-responsive">
+		<table class="table table-light">
+			<thead class="thead-dark">
+				<tr>
+					<th>Pet Name</th>
+					<th>Breed</th>
+					<th>Weight</th>
+					<th>Age</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+				<tr data-id={{id}}>
+					<td>{{petName}}</td>
+					<td>{{breed}}</td>
+					<td>{{weight}}</td>
+					<td>{{age}}</td>
+					<td><i class="far fa-window-close" id="deletePetInfo"></i></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	
 	<br>
 	<a class="nav-button btn btn-primary" href="/petinfo/add" role="button">Add Pet Info</a>
 {{/if}}
+
 
 {{!-- NEW SECTION --}}
 
 {{#if health}}
 
-<h2>Health info underconstruction.</h2>
+	<h2>Health info underconstruction.</h2>
 
 {{/if}}
+
 
 {{!-- NEW SECTION --}}
 
-{{#if vetInfo}}
+{{#if vet}}
+
 	<h2>Vet Info</h2>
 
-	<a class="nav-button btn btn-primary" href="/vetinfo/add" role="button">Add Vet Info</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button"><i class="fas fa-home"></i></a>
 
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th>Hospital</th>
-				<th>Vet Name</th>
-				<th>Weight</th>
-				<th>Phone Number</th>
-				<th>Address</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{{!-- Our Handlebars code goes here! --}}
-			{{#each data}}
-			<tr data-id={{id}}>
-				<td>{{hospital}}</td>
-				<td>{{vetName}}</td>
-				<td>{{phoneNumber}}</td>
-				<td>{{address}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
+	<br><br>
+
+	<div class="table-responsive">
+		<table class="table table-light">
+			<thead class="thead-dark">
+				<tr>
+					<th>Hospital</th>
+					<th>Vet Name</th>
+					<th>Phone Number</th>
+					<th>Address</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+				<tr data-id={{id}}>
+					<td>{{hospital}}</td>
+					<td>{{vetName}}</td>
+					<td>{{phoneNumber}}</td>
+					<td>{{address}}</td>
+					<td><i class="far fa-window-close" id="deleteVet"></i></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/vet/add" role="button">Add Vet Info</a>
 {{/if}}
+
 
 {{!-- SECTION --}}
 
-	{{#if vaccinations}}
+{{#if vaccinations}}
 	<h2>Vaccinations</h2>
 
-	<a class="nav-button btn btn-primary" href="/vaccinations/add" role="button">Add Vaccination Info</a>
+	<a class="nav-button btn btn-success float-right" href="/home" role="button"><i class="fas fa-home"></i></a>
+	
+	<br><br>
 
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th>Vaccines</th>
-				<th>Vaccine Date</th>
-				<th>Vaccine Expirations</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{{!-- Our Handlebars code goes here! --}}
-			{{#each data}}
-			<tr data-id={{id}}>
-				<td>{{vaccines}}</td>
-				<td>{{vaccineDate}}</td>
-				<td>{{expires}}</td>
-				{{!-- to add delete button later --}}
-				{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
+	<div class="table-responsive">
+		<table class="table table-light">
+			<thead class="thead-dark">
+				<tr>
+					<th>Vaccine</th>
+					<th>Date Received</th>
+					<th>Expires</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+				<tr data-id={{id}}>
+					<td>{{vaccineName}}</td>
+					<td>{{vaccineDate}}</td>
+					<td>{{expires}}</td>
+					<td><i class="far fa-window-close" id="deleteVaccine"></i></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+
+	<br>
+
+	<a class="nav-button btn btn-primary" href="/vaccines/add" role="button">Add Vaccine</a>
 {{/if}}
+
 
 {{!-- NEW SECTION --}}
 
@@ -117,33 +143,36 @@
 
 	<br><br>
 
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th>Activity Type</th>
-				<th>Start/Stop</th>
-				<th>When</th>
-				<th>Notes</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each data}}
-			<tr data-id={{id}}>
-				<td>{{activityType}}</td>
-				<td>{{startOrStop}}</td>
-				<td>{{createdAt}}</td>
-				<td>{{notes}}</td>
-				<td><i class="far fa-times-circle" id="deleteActivity"></i></td>
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
+	<div class="table-responsive">
+		<table class="table table-light">
+			<thead class="thead-dark">
+				<tr>
+					<th>Activity Type</th>
+					<th>Start/Stop</th>
+					<th>When</th>
+					<th>Notes</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+				<tr data-id={{id}}>
+					<td>{{activityType}}</td>
+					<td>{{startOrStop}}</td>
+					<td>{{createdAt}}</td>
+					<td>{{notes}}</td>
+					<td><i class="far fa-window-close" id="deleteActivity"></i></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 
 	<br>
 
 	<a class="nav-button btn btn-primary" href="/activity/add" role="button">Add Activity</a>
 {{/if}}
+
 
 {{!-- NEW SECTION --}}
 
@@ -154,31 +183,34 @@
 
 	<br><br>
 
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th>Meal Type</th>
-				<th>When</th>
-				<th>Notes</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each data}}
-			<tr data-id={{id}}>
-				<td>{{mealType}}</td>
-				<td>{{createdAt}}</td>
-				<td>{{notes}}</td>
-				<td><i class="far fa-times-circle" id="deleteDiet"></i></td>
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
+	<div class="table-responsive">
+		<table class="table table-light">
+			<thead class="thead-dark">
+				<tr>
+					<th>Meal Type</th>
+					<th>When</th>
+					<th>Notes</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+				<tr data-id={{id}}>
+					<td>{{mealType}}</td>
+					<td>{{createdAt}}</td>
+					<td>{{notes}}</td>
+					<td><i class="far fa-window-close" id="deleteDiet"></i></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
 
 	<br>
 
 	<a class="nav-button btn btn-primary" href="/diet/add" role="button">Add Meal</a>
 {{/if}}
+
 
 {{!-- SECTION --}}
 
@@ -190,7 +222,8 @@
 
 	<br><br>
 
-	<table class="table">
+	<div class="table-responsive">
+		<table class="table table-light">
 		<thead class="thead-dark">
 			<tr>
 				<th>Potty Type</th>
@@ -205,16 +238,18 @@
 				<td>{{pottyType}}</td>
 				<td>{{createdAt}}</td>
 				<td>{{notes}}</td>
-				<td><i class="far fa-times-circle" id="deletePotty"></i></td>
+				<td><i class="far fa-window-close" id="deletePotty"></i></td>
 			</tr>
 			{{/each}}
 		</tbody>
-	</table>
+		</table>
+	</div>
 
 	<br>
 
 	<a class="nav-button btn btn-primary" href="/potty/add" role="button">Add Potty Info</a>
 {{/if}}
+
 
 {{!-- SECTION --}}
 
@@ -226,27 +261,29 @@
 
 	<br><br>
 
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th>Hygiene Type</th>
-				<th>When</th>
-				<th>Notes</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			{{#each data}}
-			<tr data-id={{id}}>
-				<td>{{hygieneType}}</td>
-				<td>{{createdAt}}</td>
-				<td>{{notes}}</td>
-				<td><i class="far fa-times-circle" id="deleteHygiene"></i></td>
-			</tr>
-			{{/each}}
-		</tbody>
-	</table>
-	
+	<div class="table-responsive">
+		<table class="table table-light">
+			<thead class="thead-dark">
+				<tr>
+					<th>Hygiene Type</th>
+					<th>When</th>
+					<th>Notes</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each data}}
+				<tr data-id={{id}}>
+					<td>{{hygieneType}}</td>
+					<td>{{createdAt}}</td>
+					<td>{{notes}}</td>
+					<td><i class="far fa-window-close" id="deleteHygiene"></i></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+
 	<br>
 
 	<a class="nav-button btn btn-primary" href="/hygiene/add" role="button">Add Hygiene Info</a>

@@ -115,9 +115,9 @@ module.exports = function (app) {
     });
 
 
-    // VET INFO - ICEBOX
+    // VET INFO 
     // =============================================================================
-    app.get("/api/vetinfo", function (req, res) {
+    app.get("/api/vet", function (req, res) {
         db.VetInfo.findAll({})
             .then(function (vetData) {
                 res.json(vetData);
@@ -128,7 +128,7 @@ module.exports = function (app) {
             })
     });
 
-    app.post("/api/vetinfo", function (req, res) {
+    app.post("/api/vet", function (req, res) {
         db.VetInfo.create({
             hospital: req.body.hospital,
             vetName: req.body.vetName,
@@ -146,9 +146,27 @@ module.exports = function (app) {
             });
     });
 
-    // VACCINATIONS - ICEBOX
+    
+    app.delete("/api/vet/:id", function(req, res) {
+        db.VetInfo.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
+    });
+
+    // VACCINATIONS
     // =============================================================================
-    app.get("/api/vaccinations", function (req, res) {
+    app.get("/api/vaccines", function (req, res) {
         db.Vaccinations.findAll({})
             .then(function (vaccinationsData) {
                 res.json(vaccinationsData);
@@ -159,9 +177,9 @@ module.exports = function (app) {
             })
     });
 
-    app.post("/api/vaccinations", function (req, res) {
+    app.post("/api/vaccines", function (req, res) {
         db.Vaccinations.create({
-            vaccines: req.body.vaccines,
+            vaccineName: req.body.vaccineName,
             vaccineDate: req.body.vaccineDate,
             expires: req.body.expires
         })
@@ -174,6 +192,23 @@ module.exports = function (app) {
                 console.log(err);
                 res.json(err)
             })
+    });
+
+    app.delete("/api/vaccines/:id", function(req, res) {
+        db.Vaccinations.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(data) {
+            // .dataValues = specifies what data to console.log
+            console.log("Deleted data", data.dataValues)
+            res.json(data);
+        })
+        .catch(function(err) {
+            console.log(err);
+            res.json(err)
+        })
     });
 
 
