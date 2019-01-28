@@ -22,12 +22,17 @@ body {
     margin: 15px;
 }
 
-#home-page {
+.section-icon {
     background: #fff;
-    opacity: 0.75;
-    height: 275px;
-    width: 275px;
+    /* opacity: 0.75; */
+    height: 175px;
+    width: 175px;
     margin: 25px;
+}
+
+.icon {
+    height: 175px;
+    width: 175px;
 }
 
 /* sticky footer */
