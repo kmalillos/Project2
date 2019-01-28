@@ -63,7 +63,9 @@ module.exports = function (app) {
     });
 
     app.get("/health", function (req, res) {
-        res.render("section");
+        res.render("section", {
+            health: true
+        });
     });
 
     app.get("/activity", function (req, res) {
@@ -104,6 +106,16 @@ module.exports = function (app) {
                     data: hygieneData
                 });
             })
+    });
+
+    app.get("/favorites", function (req, res) {
+        res.render("section", {
+            favorites: true
+        })
+    });
+
+    app.get("/resources", function (req, res) {
+        res.render("resources")
     });
 
     // ADD FORMS
