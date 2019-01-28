@@ -17,22 +17,28 @@ body {
     transform: translateY(-50%);
   }
 
-#index-page {
+.left-narrow-margin {
     width: 33%;
     margin: 15px;
 }
 
-.section-icon {
-    background: #fff;
-    /* opacity: 0.75; */
-    height: 175px;
+.left-wide-margin {
+    width: 66%;
+    margin: 15px;
+}
+
+.section-title {
+    background: transparent;
+    height: 200px;
     width: 175px;
     margin: 25px;
 }
 
 .icon {
+    background: #fff;
     height: 175px;
     width: 175px;
+    margin: 25px;
 }
 
 /* sticky footer */
