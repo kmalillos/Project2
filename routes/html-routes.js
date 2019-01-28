@@ -39,15 +39,15 @@ module.exports = function (app) {
 
     // Here we've add our isAuthenticated middleware to this route.
     // If a user who is not logged in tries to access this route they will be redirected to the signup page
-    app.get("/home", isAuthenticated, function (req, res) {
-        res.render("home");
-    });
+    // app.get("/home", isAuthenticated, function (req, res) {
+    //     res.render("home");
+    // });
 
     // // ***WHILE TESTING COMMENT OUT ABOVE AND USE CODE BELOW:***
     // // and use link: http://localhost:8080/home
-    // app.get("/home", function (req, res) {
-    //     res.render("home");
-    // });
+    app.get("/home", function (req, res) {
+        res.render("home");
+    });
 
     // SECTIONS
     // =============================================================
@@ -63,7 +63,9 @@ module.exports = function (app) {
     });
 
     app.get("/health", function (req, res) {
-        res.render("section");
+        res.render("section", {
+            health: true
+        });
     });
 
     app.get("/activity", function (req, res) {
@@ -104,6 +106,16 @@ module.exports = function (app) {
                     data: hygieneData
                 });
             })
+    });
+
+    app.get("/favorites", function (req, res) {
+        res.render("section", {
+            favorites: true
+        })
+    });
+
+    app.get("/resources", function (req, res) {
+        res.render("resources")
     });
 
     // ADD FORMS

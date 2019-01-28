@@ -17,16 +17,25 @@ body {
     transform: translateY(-50%);
   }
 
-#index-page {
+.left-narrow-margin {
     width: 33%;
     margin: 15px;
 }
 
-#home-page {
+.left-wide-margin {
+    width: 66%;
+    margin: 15px;
+}
+
+.section-title {
+    position: relative;
+    padding: 0
+}
+
+.icon {
     background: #fff;
-    opacity: 0.75;
-    height: 275px;
-    width: 275px;
+    height: 175px;
+    width: 175px;
     margin: 25px;
 }
 

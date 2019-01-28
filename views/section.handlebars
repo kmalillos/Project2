@@ -1,4 +1,4 @@
-<div class="vertical-center" id="index-page">
+<div class="vertical-center left-wide-margin">
 
 {{!-- NEW SECTION --}}
 
@@ -33,6 +33,14 @@
 	</table>
 	<br>
 	<a class="nav-button btn btn-primary" href="/petinfo/add" role="button">Add Pet Info</a>
+{{/if}}
+
+{{!-- NEW SECTION --}}
+
+{{#if health}}
+
+<h2>Health info underconstruction.</h2>
+
 {{/if}}
 
 {{!-- NEW SECTION --}}
@@ -244,5 +252,10 @@
 	<a class="nav-button btn btn-primary" href="/hygiene/add" role="button">Add Hygiene Info</a>
 {{/if}}
 
+{{!-- NEW SECTION --}}
+
+{{#if favorites}}
+	<h2>Favorites is under construction.</h2>
+{{/if}}
 
 </div>
