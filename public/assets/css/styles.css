@@ -1,6 +1,6 @@
 body {
     /* background: no-repeat fixed center; */
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed
@@ -37,7 +37,6 @@ body {
     width: 50%;
     margin: 15px;
 }
-
 
 .title-icon {
     float: left;
