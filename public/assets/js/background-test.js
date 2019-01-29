@@ -1,4 +1,6 @@
-$(document).ready(function() {
+// If the new random number is equal to any previous random number stored in the array, don't print it to the screen
+
+$(document).ready(function () {
 
     var srcs = [
         "/assets/img/background/bulldog.jpg",
@@ -7,19 +9,25 @@ $(document).ready(function() {
         "/assets/img/background/chocolate-lab.jpg",
         "/assets/img/background/flower-dog.jpg",
         "/assets/img/background/fluffy-puppy.jpg",
-        "/assets/img/background/puppy-beach.jpg",  
+        "/assets/img/background/puppy-beach.jpg",
         "/assets/img/background/puppy-sleepy.jpg",
         "/assets/img/background/yellow-lab.jpg"];
 
+
     function randomizeSrcIndex() {
-        return Math.floor(Math.random()*srcs.length);
+        var randomNum = Math.floor(Math.random() * srcs.length);
+        return randomNum;
     };
-    
+
     function updateBGimage(index) {
+
         var image = srcs[index];
         var url = `url(${image})`
-        $("body").css("background-image", url)
+
+        $("body").css("background-image", url) 
+
     };
+
 
     updateBGimage(randomizeSrcIndex());
 

@@ -60,7 +60,7 @@ $(".deleteVet").on("click", function () {
 
     $.ajax({
         method: "DELETE",
-        url: `/api/petinfo/${id}`
+        url: `/api/vet/${id}`
     }).then(function (data) {
         console.log("Data Deleted", data);
         location = location;
