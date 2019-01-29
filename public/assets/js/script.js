@@ -20,7 +20,7 @@ $("#addPetInfo").on("submit", function (event) {
     })
 });
 
-$("#deletePetInfo").on("click", function () {
+$(".deletePetInfo").on("click", function () {
     // parents => helps to find tr and grabs attribute
     var id = $(this).parents("tr").attr("data-id");
 
@@ -54,7 +54,7 @@ $("#addVet").on("submit", function (event) {
     })
 });
 
-$("#deleteVet").on("click", function () {
+$(".deleteVet").on("click", function () {
     // parents => helps to find tr and grabs attribute
     var id = $(this).parents("tr").attr("data-id");
 
@@ -89,7 +89,7 @@ $("#addVaccine").on("submit", function (event) {
     })
 });
 
-$("#deleteVaccine").on("click", function () {
+$(".deleteVaccine").on("click", function () {
     // parents => helps to find tr and grabs attribute
     var id = $(this).parents("tr").attr("data-id");
 
@@ -126,7 +126,7 @@ $("#addActivity").on("submit", function (event) {
     })
 });
 
-$("#deleteActivity").on("click", function () {
+$(".deleteActivity").on("click", function () {
     // parents => helps to find tr and grabs attribute
     var id = $(this).parents("tr").attr("data-id");
 
@@ -161,7 +161,7 @@ $("#addDiet").on("submit", function (event) {
     })
 });
 
-$("#deleteDiet").on("click", function () {
+$(".deleteDiet").on("click", function () {
     // parents => helps to find tr and grabs attribute
     var id = $(this).parents("tr").attr("data-id");
 
@@ -196,7 +196,7 @@ $("#addPotty").on("submit", function (event) {
     })
 });
 
-$("#deletePotty").on("click", function () {
+$(".deletePotty").on("click", function () {
     // parents => helps to find tr and grabs attribute
     var id = $(this).parents("tr").attr("data-id");
 
@@ -231,7 +231,7 @@ $("#addHygiene").on("submit", function (event) {
     })
 });
 
-$("#deleteHygiene").on("click", function () {
+$(".deleteHygiene").on("click", function () {
     // parents => helps to find tr and grabs attribute
     var id = $(this).parents("tr").attr("data-id");
 
