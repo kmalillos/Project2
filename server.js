@@ -47,8 +47,8 @@ require("./routes/html-routes.js")(app);
 
 // LISTENER
 // =============================================================================
-// ***REMOVE {FORCE: TRUE} AFTER TESTING!
-db.sequelize.sync({ force: true }).then(function() {
+// ***REMOVE { force: true } AFTER TESTING!
+db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
       console.log("App listening on http://localhost:" + PORT);
     });
