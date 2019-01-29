@@ -120,8 +120,8 @@ $("#addActivity").on("submit", function (event) {
         method: "POST",
         url: "/api/activity",
         data: newActivity
-    }).then(function (activityData) {
-        console.log("New activity added", newActivity);
+    }).then(function (data) {
+        console.log("New activity added", data);
         location.href = "/activity";
     })
 });
