@@ -233,9 +233,9 @@ module.exports = function (app) {
             // endTime: req.body.endTime,
             notes: req.body.notes
         })
-            .then(function (activitytrackerCreatedData) {
-                console.log("New activity info created", activitytrackerCreatedData.dataValues);
-                res.json(activitytrackerCreatedData);
+            .then(function (newActivityData) {
+                console.log("New activity info created", newActivityData.dataValues);
+                res.json(newActivityData);
             })
             .catch(function (err) {
                 console.log(err);

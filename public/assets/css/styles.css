@@ -1,6 +1,8 @@
 body {
     background: url("../img/background/puppy-sleepy.jpg") no-repeat fixed center;
     background-size: cover;
+    /* background-repeat: no-repeat;
+    background-position: center; */
 }
 
 .wrapper {
