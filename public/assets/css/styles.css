@@ -1,8 +1,9 @@
 body {
-    background: no-repeat fixed center;
-    background-size: cover;
-    /* background-repeat: no-repeat;
-    background-position: center; */
+    /* background: no-repeat fixed center; */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed
 }
 
 .wrapper {
@@ -19,6 +20,11 @@ body {
     transform: translateY(-50%);
 }
 
+.opacity-property {
+    background: #fff;
+    opacity: 0.9;
+    padding: 20px;
+}
 
 /* MARGINS */
 

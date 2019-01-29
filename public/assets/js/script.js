@@ -243,4 +243,3 @@ $("#deleteHygiene").on("click", function () {
         location = location;
     })
 });
-
