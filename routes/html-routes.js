@@ -43,12 +43,6 @@ module.exports = function (app) {
         res.render("home");
     });
 
-    // // ***WHILE TESTING COMMENT OUT ABOVE AND USE CODE BELOW:***
-    // // and use link: http://localhost:8080/home
-    // app.get("/home", function (req, res) {
-    //     res.render("home");
-    // });
-
     // SECTIONS
     // =============================================================
 
@@ -61,12 +55,6 @@ module.exports = function (app) {
                 });
             })
     });
-
-    // app.get("/health", function (req, res) {
-    //     res.render("section", {
-    //         health: true
-    //     });
-    // });
 
     app.get("/vet", function (req, res) {
         db.VetInfo.findAll({})
@@ -140,20 +128,6 @@ module.exports = function (app) {
 
     // ADD FORMS
     // =============================================================
-
-    // ADD-FORMS: need to think about simplifying
-
-    // var routesList = ["petinfo", "health", "activity", "diet", "potty", "hygiene"];
-
-    // app.get("/:route/add", function (req, res) {
-    //     if (routesList.includes(req.params.route)) {
-    //         console.log("Yes! Section found!")
-    //         return res.render("add-form");
-    //     } else {
-    //         console.log("No! Section not found.")
-    //         res.end();
-    //     }
-    // });
 
     app.get("/petinfo/add", function (req, res) {
         return res.render("add-form", { petInfo: true });
