@@ -168,7 +168,7 @@ module.exports = function (app) {
     });
 
     app.get("/activity/add", function (req, res) {
-        return res.render("add-form", { activity: true });
+        return res.render("add-form", { activityTracker: true });
     });
 
     app.get("/diet/add", function (req, res) {
