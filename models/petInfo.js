@@ -9,11 +9,11 @@ module.exports = function(sequelize, DataTypes){
             allowNull: false
         },
         weight: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false
         },
         age: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false
         }
     },{

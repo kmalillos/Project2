@@ -19,9 +19,9 @@ module.exports = function (app) {
 
     app.get("/", function (req, res) {
         // If the user already has an account send them to the members page
-        // if (req.user) {
-        //     res.render("home");
-        // }
+        if (req.user) {
+            res.render("home");
+        }
         res.render("login");
     });
 
@@ -31,9 +31,9 @@ module.exports = function (app) {
 
     app.get("/login", function (req, res) {
         // If the user already has an account send them to the members page
-        // if (req.user) {
-        //     res.render("home");
-        // }
+        if (req.user) {
+            res.render("home");
+        }
         res.render("login");
     });
 
