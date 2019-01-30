@@ -19,10 +19,15 @@ module.exports = function (app) {
 
     app.get("/", function (req, res) {
         // If the user already has an account send them to the members page
+        if (req.user) {
+            res.render("home");
+        }
+        res.render("login");
         // if (req.user) {
         //     res.render("home");
+        // } else {
+        //     res.render("login");
         // }
-        res.render("login");
     });
 
     app.get("/signup", function (req, res) {
@@ -31,10 +36,15 @@ module.exports = function (app) {
 
     app.get("/login", function (req, res) {
         // If the user already has an account send them to the members page
+        if (req.user) {
+            res.render("home");
+        }
+        res.render("login");
         // if (req.user) {
         //     res.render("home");
+        // } else {
+        //     res.render("login");
         // }
-        res.render("login");
     });
 
     // Here we've add our isAuthenticated middleware to this route.
