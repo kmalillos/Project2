@@ -1,8 +1,6 @@
-# DoJo - Dog Journal
+# DoJo: Dog Journal
 
-Ever wonder what your best friend is doing when you're apart? When's the last time he walked, ate, or went potty? 
-
-DoJo (Dog Journal) can help you, you and your partner, or you and your roommates ~~stalk~~ keep track of your furry friend!
+Ever wonder what your best friend is doing when you're apart? When's the last time he walked, ate, or went potty? The DoJo: Dog Journal application can help you, you and your partner, or you and your roommates ~~stalk~~ keep track of your furry friend!
 
 ### Try It Out (Login details below): [Live Page Here](https://dojo-dogjournal.herokuapp.com/)
 
@@ -15,18 +13,17 @@ DoJo (Dog Journal) can help you, you and your partner, or you and your roommates
 ## How It Works
 
 * User creates a Login though the Sign-Up page
-
-    ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/home-page.JPG)
-
 * Once Login is created, User signs into the app
 * Home Page displays all the different sections of dog's life:
     * Pet Info, Vet Info, Vaccinations, Activity, Diet, Potty, Hygenie, Favorites, and Resources
 
-    ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/section-page.JPG)
+    ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/home-page.JPG)
 
 * User can use "Add" button to go to a Form, where User can enter and submit User input
 * User input is displayed in each section
 * User can delete existing input in each section by clicking on the 'Trash Icon'
+
+    ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/section-page.JPG)
 
 <!-- **Sample Demo:** [Link]() -->
 
