@@ -2,7 +2,7 @@
 
 Ever wonder what your best friend is doing when you're apart? When's the last time he walked, ate, or went potty? The DoJo: Dog Journal application can help you, you and your partner, or you and your roommates ~~stalk~~ keep track of your furry friend!
 
-### Try It Out (Login details below): [Live Page Here](https://dojo-dogjournal.herokuapp.com/)
+### Try It Out (Login details below): [Live Page Here](https://kmalillos-dogjournal.herokuapp.com/)
 
 
 **Email:** kaylahmalillos@gmail.com <br>
