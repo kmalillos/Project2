@@ -10,17 +10,23 @@ DoJo (Dog Journal) can help you, you and your partner, or you and your roommates
 **Email:** kaylahmalillos@gmail.com <br>
 **Password:** lola 
 
-![Image]()
+![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/login-page.JPG)
 
 ## How It Works
 
 * User creates a Login though the Sign-Up page
+
+    ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/home-page.JPG)
+
 * Once Login is created, User signs into the app
 * Home Page displays all the different sections of dog's life:
-    * Pet Info, Vet Info, Vaccinations, 
+    * Pet Info, Vet Info, Vaccinations, Activity, Diet, Potty, Hygenie, Favorites, and Resources
+
+    ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/section-page.JPG)
+
 * User can use "Add" button to go to a Form, where User can enter and submit User input
 * User input is displayed in each section
-* User can "delete" 
+* User can delete existing input in each section by clicking on the 'Trash Icon'
 
 <!-- **Sample Demo:** [Link]() -->
 
@@ -36,6 +42,9 @@ DoJo (Dog Journal) can help you, you and your partner, or you and your roommates
 * Sequelize
 * JavaScript + jQuery
 * Passport.js
+* Git Version Control
+* Agile Methodology
+* Heroku
 
 <!-- ### Models-Views-Controller (MVC) Paradigm
 
