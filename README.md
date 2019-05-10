@@ -29,6 +29,13 @@ Ever wonder what your best friend is doing when you're apart? When's the last ti
 
 ## Developer Notes
 
+### Design Sketches:
+
+![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/design-1.jpg)
+
+![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/design-2.jpg)
+
+
 ### Built With:
 * Models-Views-Controller (MVC) Paradigm
 * Handlebars.js
