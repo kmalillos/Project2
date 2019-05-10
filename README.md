@@ -2,17 +2,20 @@
 
 Ever wonder what your best friend is doing when you're apart? When's the last time he walked, ate, or went potty? The DoJo: Dog Journal application can help you, you and your partner, or you and your roommates ~~stalk~~ keep track of your furry friend!
 
-### Try It Out (Login details below): [Live Page Here](https://kmalillos-dogjournal.herokuapp.com/)
+## Conceptualization:
 
+### Design Sketches:
 
-**Email:** kaylahmalillos@gmail.com <br>
-**Password:** lola 
+![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/design-1.jpg)
 
-![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/login-page.JPG)
+![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/design-2.jpg)
 
 ## How It Works
 
 * User creates a Login though the Sign-Up page
+
+    ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/login-page.JPG)
+
 * Once Login is created, User signs into the app
 * Home Page displays all the different sections of dog's life:
     * Pet Info, Vet Info, Vaccinations, Activity, Diet, Potty, Hygenie, Favorites, and Resources
@@ -25,16 +28,14 @@ Ever wonder what your best friend is doing when you're apart? When's the last ti
 
     ![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/section-page.JPG)
 
-<!-- **Sample Demo:** [Link]() -->
+### Try It Out (Login details below): [Live Page Here](https://kmalillos-dogjournal.herokuapp.com/)
+
+
+**Email:** kaylahmalillos@gmail.com <br>
+**Password:** lola 
+
 
 ## Developer Notes
-
-### Design Sketches:
-
-![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/design-1.jpg)
-
-![Image](https://github.com/kmalillos/dog-journal/blob/master/read-me/design-2.jpg)
-
 
 ### Built With:
 * Models-Views-Controller (MVC) Paradigm
